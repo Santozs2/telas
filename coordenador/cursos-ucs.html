@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Cursos e UCs</title>
+<link rel="stylesheet" href="../assets/css/sipae.css">
+</head>
+<body data-role="coordenador" data-page="cursos" data-title="Cursos e Unidades Curriculares" data-crumb="Gestão">
+
+<div class="app">
+  <div id="sidebar-slot"></div>
+  <div class="main">
+    <div id="topbar-slot"></div>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h1>Cursos e unidades curriculares</h1>
+          <p class="sub">O vínculo UC &times; ambiente é a regra que impede o docente de escolher sala livremente. Também é a base do critério de desempate.</p>
+        </div>
+        <div class="page-head__actions">
+          <button class="btn">Importar plano de curso</button>
+          <button class="btn btn--primary"><i data-ico="mais"></i> Nova UC</button>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <div class="tab is-on">Vínculo UC &times; ambiente</div>
+        <div class="tab">Cursos e turmas</div>
+        <div class="tab">Matriz horária</div>
+      </div>
+
+      <div class="grid g-3-2" style="align-items:start">
+
+        <div class="stack">
+
+          <div class="card">
+            <div class="card__head">
+              <h3>Unidades curriculares</h3>
+              <div class="right">
+                <select class="select" style="width:auto"><option>Todos os cursos</option><option>CAI Mecânica</option><option>CT Automação</option></select>
+                <label class="search" style="width:190px"><span><i data-ico="busca"></i></span><input placeholder="Buscar UC"></label>
+              </div>
+            </div>
+            <div class="card__body--flush">
+              <div class="table-wrap">
+                <table class="tb">
+                  <thead>
+                    <tr><th>Unidade curricular</th><th>Curso</th><th class="num">CH</th><th>Natureza</th><th>Ambientes vinculados</th><th>Docentes</th><th class="actions">Ações</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="strong">Comandos Elétricos</td>
+                      <td><span class="tag tag--cai">CAI</span> Mecânica</td>
+                      <td class="num">60h</td>
+                      <td><span class="badge badge--purple">Prática</span></td>
+                      <td>
+                        <span class="prio prio--1"><span class="n">1</span> Lab. Comando</span><br>
+                        <span class="prio prio--3"><span class="n">3</span> Of. Elétrica Predial</span>
+                      </td>
+                      <td>Edvaldo R. <span class="muted">+1 aux.</span></td>
+                      <td class="actions"><button class="btn btn--sm">Editar</button></td>
+                    </tr>
+                    <tr>
+                      <td class="strong">Pneumática e Hidráulica</td>
+                      <td><span class="tag tag--ct">CT</span> Automação</td>
+                      <td class="num">45h</td>
+                      <td><span class="badge badge--purple">Prática</span></td>
+                      <td>
+                        <span class="prio prio--1"><span class="n">1</span> Lab. Pneumática</span><br>
+                        <span class="prio prio--2"><span class="n">2</span> Lab. Comando</span>
+                      </td>
+                      <td>Saran O.</td>
+                      <td class="actions"><button class="btn btn--sm">Editar</button></td>
+                    </tr>
+                    <tr>
+                      <td class="strong">Processos de Usinagem</td>
+                      <td><span class="tag tag--cai">CAI</span> Mecânica</td>
+                      <td class="num">80h</td>
+                      <td><span class="badge badge--purple">Prática</span></td>
+                      <td>
+                        <span class="prio prio--1"><span class="n">1</span> Of. Usinagem</span><br>
+                        <span class="prio prio--2"><span class="n">2</span> Lab. CNC</span>
+                      </td>
+                      <td>Marcos P. <span class="muted">+1 aux.</span></td>
+                      <td class="actions"><button class="btn btn--sm">Editar</button></td>
+                    </tr>
+                    <tr>
+                      <td class="strong">Projetos Integradores</td>
+                      <td><span class="tag tag--cai">CAI</span> Mecânica</td>
+                      <td class="num">45h</td>
+                      <td><span class="badge badge--muted">Mista</span></td>
+                      <td>
+                        <span class="prio prio--1"><span class="n">1</span> Lab. Informática</span><br>
+                        <span class="prio prio--2"><span class="n">2</span> Sala de aula</span>
+                      </td>
+                      <td>Edvaldo R.</td>
+                      <td class="actions"><button class="btn btn--sm">Editar</button></td>
+                    </tr>
+                    <tr>
+                      <td class="strong">Metrologia</td>
+                      <td><span class="tag tag--cai">CAI</span> Mecânica</td>
+                      <td class="num">30h</td>
+                      <td><span class="badge badge--purple">Prática</span></td>
+                      <td><span class="prio prio--1"><span class="n">1</span> Lab. Metrologia</span></td>
+                      <td>Paulo N. <span class="muted">+1 aux.</span></td>
+                      <td class="actions"><button class="btn btn--sm">Editar</button></td>
+                    </tr>
+                    <tr>
+                      <td class="strong">Desenho Técnico</td>
+                      <td><span class="tag tag--cai">CAI</span> Mecânica</td>
+                      <td class="num">40h</td>
+                      <td><span class="badge badge--muted">Teórica</span></td>
+                      <td><span class="prio prio--2"><span class="n">2</span> Sala de aula</span></td>
+                      <td>Edvaldo R.</td>
+                      <td class="actions"><button class="btn btn--sm">Editar</button></td>
+                    </tr>
+                    <tr>
+                      <td class="strong">Segurança do Trabalho</td>
+                      <td><span class="tag tag--ct">CT</span> Automação</td>
+                      <td class="num">20h</td>
+                      <td><span class="badge badge--muted">Teórica</span></td>
+                      <td><span class="prio prio--2"><span class="n">2</span> Sala de aula</span></td>
+                      <td>Edvaldo R.</td>
+                      <td class="actions"><button class="btn btn--sm">Editar</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__head"><h3>Matriz horária por modalidade</h3><span class="sub">Define os períodos da grade</span></div>
+            <div class="card__body--flush">
+              <table class="tb">
+                <thead><tr><th>Modalidade</th><th class="num">Duração da aula</th><th class="num">Intervalo</th><th>Períodos manhã</th><th>Períodos tarde</th><th class="actions">Ações</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="strong"><span class="tag tag--cai">CAI</span> Aprendizagem Industrial</td>
+                    <td class="num">50 min</td><td class="num">20 min</td>
+                    <td class="mono">07:30 &ndash; 12:00</td><td class="mono">13:00 &ndash; 17:30</td>
+                    <td class="actions"><button class="btn btn--sm">Editar</button></td>
+                  </tr>
+                  <tr>
+                    <td class="strong"><span class="tag tag--ct">CT</span> Curso Técnico</td>
+                    <td class="num">45 min</td><td class="num">15 min</td>
+                    <td class="mono">07:30 &ndash; 11:30</td><td class="mono">13:00 &ndash; 17:00</td>
+                    <td class="actions"><button class="btn btn--sm">Editar</button></td>
+                  </tr>
+                  <tr style="opacity:.7">
+                    <td class="strong"><span class="tag tag--fic">FIC</span> Formação Inicial e Continuada</td>
+                    <td class="num">60 min</td><td class="num">15 min</td>
+                    <td class="mono">&mdash;</td><td class="mono">18:30 &ndash; 22:00</td>
+                    <td class="actions"><button class="btn btn--sm">Ativar</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card__foot"><span><i data-ico="info"></i></span><span>Prevista expansão para FIC e Faculdade &mdash; a matriz é parametrizável.</span></div>
+          </div>
+
+        </div>
+
+        <!-- Editor de vínculo -->
+        <div class="stack">
+
+          <div class="card">
+            <div class="card__head"><h3>Vincular ambientes à UC</h3><div class="right"><span class="badge badge--info">Comandos Elétricos</span></div></div>
+            <div class="card__body">
+              <div class="form-grid" style="grid-template-columns:1fr">
+                <div class="field">
+                  <label>Unidade curricular</label>
+                  <select class="select"><option>Comandos Elétricos &middot; 60h</option><option>Metrologia &middot; 30h</option></select>
+                </div>
+                <div class="field">
+                  <label>Natureza da UC</label>
+                  <select class="select"><option>Prática &middot; exige laboratório ou oficina</option><option>Teórica &middot; sala de aula</option><option>Mista</option></select>
+                  <span class="hint">UC teórica não pode ser vinculada a ambiente prático como principal.</span>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+              <div class="strong" style="margin-bottom:10px">Ambientes por prioridade</div>
+
+              <div class="stack" style="gap:10px">
+                <div class="row row--between" style="border:1px solid var(--line);border-radius:9px;padding:10px 12px">
+                  <div>
+                    <div class="strong">Lab. de Comando Elétrico</div>
+                    <div class="muted" style="font-size:11.6px">16 lugares &middot; Bloco C</div>
+                  </div>
+                  <select class="select" style="width:auto">
+                    <option>1 &middot; Principal</option><option>2 &middot; Secundário</option><option>3 &middot; Terciário</option>
+                  </select>
+                </div>
+                <div class="row row--between" style="border:1px solid var(--line);border-radius:9px;padding:10px 12px">
+                  <div>
+                    <div class="strong">Oficina Elétrica Predial</div>
+                    <div class="muted" style="font-size:11.6px">16 lugares &middot; Bloco C</div>
+                  </div>
+                  <select class="select" style="width:auto">
+                    <option selected>3 &middot; Terciário</option><option>1 &middot; Principal</option><option>2 &middot; Secundário</option>
+                  </select>
+                </div>
+                <button class="btn btn--block"><i data-ico="mais"></i> Adicionar ambiente</button>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="stack" style="gap:10px">
+                <label class="check is-on">
+                  <input type="checkbox" checked>
+                  <span><span class="tt">Dividir turma automaticamente</span><span class="dd">Turmas acima do limite viram grupos (ex.: 30 alunos = 2 &times; 15)</span></span>
+                </label>
+                <label class="check is-on">
+                  <input type="checkbox" checked>
+                  <span><span class="tt">Exigir docente auxiliar em grupos simultâneos</span><span class="dd">Um docente por grupo, respeitando o limite de 16</span></span>
+                </label>
+                <label class="check">
+                  <input type="checkbox">
+                  <span><span class="tt">Aprovação automática no ambiente principal</span><span class="dd">Dispensa análise quando não há disputa</span></span>
+                </label>
+              </div>
+
+              <div class="row" style="margin-top:14px">
+                <button class="btn btn--primary" data-toast="Vínculo salvo" data-toast-detalhe="A UC passa a liberar apenas os ambientes definidos.">Salvar vínculo</button>
+                <button class="btn">Cancelar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__head"><h3>Cursos ativos</h3></div>
+            <div class="card__body--flush">
+              <table class="tb">
+                <thead><tr><th>Curso</th><th>Turmas</th><th class="num">Alunos</th></tr></thead>
+                <tbody>
+                  <tr><td class="strong"><span class="tag tag--cai">CAI</span> Mecânica</td><td>5</td><td class="num">142</td></tr>
+                  <tr><td class="strong"><span class="tag tag--cai">CAI</span> Eletroeletrônica</td><td>3</td><td class="num">84</td></tr>
+                  <tr><td class="strong"><span class="tag tag--ct">CT</span> Automação Industrial</td><td>3</td><td class="num">96</td></tr>
+                  <tr><td class="strong"><span class="tag tag--ct">CT</span> Mecatrônica</td><td>2</td><td class="num">62</td></tr>
+                  <tr><td class="strong"><span class="tag tag--ct">CT</span> Eletrotécnica</td><td>2</td><td class="num">58</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/icones.js"></script>
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

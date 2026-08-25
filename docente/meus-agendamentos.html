@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Meus Agendamentos</title>
+<link rel="stylesheet" href="../assets/css/sipae.css">
+</head>
+<body data-role="docente" data-page="meus" data-title="Meus Agendamentos" data-crumb="Operação">
+
+<div class="app">
+  <div id="sidebar-slot"></div>
+  <div class="main">
+    <div id="topbar-slot"></div>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h1>Meus agendamentos</h1>
+          <p class="sub">Você edita apenas as suas reservas &mdash; relação 1x1. Alterações da coordenação aparecem sinalizadas.</p>
+        </div>
+        <div class="page-head__actions">
+          <div class="seg" id="seg-visao">
+            <button class="is-on" data-value="lista">Lista</button>
+            <button data-value="calendario">Calendário</button>
+          </div>
+          <a class="btn btn--primary" href="novo-agendamento.html"><i data-ico="mais"></i> Novo agendamento</a>
+        </div>
+      </div>
+
+      <div class="grid g-4" style="margin-bottom:18px">
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-ok"><i data-ico="check"></i></div><div class="kpi__lb">Confirmados no mês</div></div>
+          <div class="kpi__vl">31</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-warn"><i data-ico="ampulheta"></i></div><div class="kpi__lb">Em análise</div></div>
+          <div class="kpi__vl">2</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-danger"><i data-ico="recusado"></i></div><div class="kpi__lb">Recusados</div></div>
+          <div class="kpi__vl">1</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-info"><i data-ico="troca"></i></div><div class="kpi__lb">Remanejados pela coordenação</div></div>
+          <div class="kpi__vl">3</div>
+        </div>
+      </div>
+
+      <!-- ================= VISÃO LISTA ================= -->
+      <div id="visao-lista">
+        <div class="tabs">
+          <div class="tab is-on">Próximos (12)</div>
+          <div class="tab">Em análise (2)</div>
+          <div class="tab">Recusados (1)</div>
+          <div class="tab">Histórico</div>
+        </div>
+
+        <div class="card">
+          <div class="card__head">
+            <h3>Agenda de agosto/2026</h3>
+            <span class="sub">Sujeita a ajustes semanais e trocas diárias</span>
+            <div class="right">
+              <select class="select btn--sm" style="width:auto;font-size:12.4px;padding:5px 9px">
+                <option>Todas as UCs</option>
+                <option>Comandos Elétricos</option>
+                <option>Desenho Técnico</option>
+              </select>
+              <button class="btn btn--sm"><i data-ico="baixar"></i> Exportar</button>
+            </div>
+          </div>
+          <div class="card__body--flush">
+            <div class="table-wrap">
+              <table class="tb">
+                <thead>
+                  <tr>
+                    <th>Data</th><th>Período</th><th>Unidade curricular</th><th>Turma</th>
+                    <th>Ambiente</th><th>Situação</th><th class="actions">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="mono">20/08 &middot; qui</td>
+                    <td class="mono">P4 &middot; 10:20</td>
+                    <td class="strong">Comandos Elétricos</td>
+                    <td>MEC-2A (G2)</td>
+                    <td>Lab. de Comando Elétrico</td>
+                    <td><span class="badge badge--ok"><span class="bullet"></span> Confirmado</span></td>
+                    <td class="actions">
+                      <button class="btn btn--sm">Editar</button>
+                      <button class="btn btn--sm btn--danger" data-toast="Falta registrada" data-toast-detalhe="Ambiente liberado no mapa imediatamente.">Falta</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">20/08 &middot; qui</td>
+                    <td class="mono">P5 &middot; 11:10</td>
+                    <td class="strong">Projetos Integradores</td>
+                    <td>MEC-2A</td>
+                    <td>Lab. de Informática</td>
+                    <td><span class="badge badge--warn">Em análise</span></td>
+                    <td class="actions">
+                      <button class="btn btn--sm">Editar</button>
+                      <button class="btn btn--sm">Cancelar</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">21/08 &middot; sex</td>
+                    <td class="mono">P1 &ndash; P2</td>
+                    <td class="strong">Desenho Técnico</td>
+                    <td>MEC-2A</td>
+                    <td>
+                      Sala de Aula 01
+                      <div class="muted" style="font-size:11.4px"><i data-ico="troca"></i> Movida da SA-03 pela coordenação</div>
+                    </td>
+                    <td><span class="badge badge--info">Remanejado</span></td>
+                    <td class="actions">
+                      <button class="btn btn--sm">Ver motivo</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">25/08 &middot; ter</td>
+                    <td class="mono">P3 &middot; 09:10</td>
+                    <td class="strong">Comandos Elétricos</td>
+                    <td>MEC-2A (G1)</td>
+                    <td>Lab. de Comando Elétrico</td>
+                    <td><span class="badge badge--danger">Em conflito</span></td>
+                    <td class="actions">
+                      <button class="btn btn--sm">Ver disputa</button>
+                      <button class="btn btn--sm">Alternativa</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">25/08 &middot; ter</td>
+                    <td class="mono">P4 &middot; 10:20</td>
+                    <td class="strong">Comandos Elétricos</td>
+                    <td>MEC-2A (G2)</td>
+                    <td>Lab. de Comando Elétrico</td>
+                    <td><span class="badge badge--ok"><span class="bullet"></span> Confirmado</span></td>
+                    <td class="actions">
+                      <button class="btn btn--sm">Editar</button>
+                      <button class="btn btn--sm btn--danger" data-toast="Falta registrada" data-toast-detalhe="Ambiente liberado no mapa imediatamente.">Falta</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">26/08 &middot; qua</td>
+                    <td class="mono">P1 &ndash; P2</td>
+                    <td class="strong">Metrologia</td>
+                    <td>MEC-1A (G1/G2)</td>
+                    <td>Lab. de Metrologia</td>
+                    <td><span class="badge badge--ok"><span class="bullet"></span> Confirmado</span></td>
+                    <td class="actions">
+                      <button class="btn btn--sm">Editar</button>
+                      <button class="btn btn--sm btn--danger" data-toast="Falta registrada" data-toast-detalhe="Ambiente liberado no mapa imediatamente.">Falta</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">27/08 &middot; qui</td>
+                    <td class="mono">P3 &middot; 09:10</td>
+                    <td class="strong">Segurança do Trabalho</td>
+                    <td>AUT-1A</td>
+                    <td>Sala de Aula 02</td>
+                    <td><span class="badge badge--muted">Carga concluída</span></td>
+                    <td class="actions">
+                      <button class="btn btn--sm" disabled>Editar</button>
+                    </td>
+                  </tr>
+                  <tr style="opacity:.72">
+                    <td class="mono">28/08 &middot; sex</td>
+                    <td class="mono">P4 &middot; 10:20</td>
+                    <td class="strong">Projetos Integradores</td>
+                    <td>MEC-2A</td>
+                    <td>Oficina de Usinagem</td>
+                    <td><span class="badge badge--danger">Recusado</span></td>
+                    <td class="actions"><button class="btn btn--sm">Ver motivo</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card__foot">
+            <span class="muted">Mostrando 8 de 34 registros</span>
+            <div class="pagination">
+              <button>&lsaquo;</button><button class="is-on">1</button><button>2</button>
+              <button>3</button><button>4</button><button>&rsaquo;</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert--danger" style="margin-top:16px">
+          <span class="alert__ic"><i data-ico="recusado"></i></span>
+          <div>
+            <div class="alert__tt">Solicitação recusada em 28/08 &middot; Oficina de Usinagem</div>
+            <div>Motivo registrado pela coordenação: <b>ambiente incompatível com a UC Projetos Integradores</b>. A atividade prevista é teórica/projetual e deve ocupar sala de aula ou lab. de informática, mantendo a oficina livre para práticas.</div>
+          </div>
+          <div class="right"><a class="btn btn--sm" href="novo-agendamento.html">Refazer solicitação</a></div>
+        </div>
+      </div>
+
+      <!-- ================= VISÃO CALENDÁRIO ================= -->
+      <div id="visao-calendario" style="display:none">
+        <div class="card">
+          <div class="card__head">
+            <h3>Agosto de 2026</h3>
+            <span class="sub">Planejamento mensal &middot; sujeito a mudanças diárias</span>
+            <div class="right">
+              <button class="btn btn--sm">&lsaquo;</button>
+              <button class="btn btn--sm">Hoje</button>
+              <button class="btn btn--sm">&rsaquo;</button>
+            </div>
+          </div>
+          <div class="card__body">
+            <div class="cal" id="cal"></div>
+          </div>
+          <div class="card__foot">
+            <div class="legend">
+              <span><i class="lg-meu"></i>Aula confirmada</span>
+              <span><i class="lg-pend"></i>Em análise</span>
+              <span><i class="lg-conf"></i>Conflito</span>
+              <span><i style="background:var(--brand-050);border-color:var(--brand-200)!important"></i>Janela de agendamento de setembro</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/icones.js"></script>
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/shell.js"></script>
+<script>
+  /* alterna lista x calendário */
+  window.aoTrocarSegmento = (valor) => {
+    document.getElementById('visao-lista').style.display      = valor === 'lista' ? '' : 'none';
+    document.getElementById('visao-calendario').style.display = valor === 'calendario' ? '' : 'none';
+  };
+
+  /* calendário de agosto/2026 - 1o dia = sábado */
+  (function montarCalendario() {
+    const eventos = {
+      3:[['meu','Desenho Téc. P1-P2']], 4:[['meu','Comandos P3-P4'],['meu','Metrologia P1']],
+      5:[['meu','Projetos P5']], 6:[['meu','Desenho Téc. P1-P2']], 7:[['meu','Comandos P3-P4']],
+      10:[['meu','Metrologia P1-P2']], 11:[['meu','Comandos P3-P4']], 12:[['meu','Projetos P5']],
+      13:[['meu','Desenho Téc. P1-P2']], 14:[['meu','Comandos P3-P4']],
+      17:[['meu','Metrologia P1-P2']], 18:[['meu','Comandos P3-P4']], 19:[['meu','Projetos P5']],
+      20:[['meu','Comandos P3-P4'],['pend','Projetos P5']],
+      21:[['mut','SA-01 (remanejada)']],
+      25:[['conf','Comandos P3 - disputa'],['meu','Comandos P4']],
+      26:[['meu','Metrologia P1-P2']], 27:[['meu','Segurança P3']], 28:[['pend','Projetos P4']],
+      31:[['meu','Comandos P3-P4']]
+    };
+    const janela = [24,25,26,27,28,29,30,31];
+    const dow = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+    const cal = document.getElementById('cal');
+    let html = dow.map(d => `<div class="cal__dow">${d}</div>`).join('');
+
+    // agosto/2026 comeca no sabado (6 celulas vazias antes)
+    for (let i = 0; i < 6; i++) html += '<div class="cal__d is-out"></div>';
+
+    for (let d = 1; d <= 31; d++) {
+      const evs = eventos[d] || [];
+      const classes = ['cal__d'];
+      if (d === 20) classes.push('is-today');
+      if (janela.includes(d)) classes.push('is-janela');
+      html += `<div class="${classes.join(' ')}">
+        <div class="cal__n">${d}</div>
+        ${evs.slice(0,2).map(e => `<div class="cal__ev cal__ev--${e[0]}">${e[1]}</div>`).join('')}
+        ${evs.length > 2 ? `<div class="cal__mais">+${evs.length - 2}</div>` : ''}
+      </div>`;
+    }
+    for (let i = 0; i < 5; i++) html += '<div class="cal__d is-out"></div>';
+    cal.innerHTML = html;
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Painel Executivo</title>
+<link rel="stylesheet" href="../assets/css/sipae.css">
+</head>
+<body data-role="diretor" data-page="dashboard" data-title="Painel Executivo" data-crumb="Início">
+
+<div class="app">
+  <div id="sidebar-slot"></div>
+  <div class="main">
+    <div id="topbar-slot"></div>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h1>Painel executivo</h1>
+          <p class="sub">Unidade SENAI &middot; agosto/2026 &middot; 3 eixos, 14 ambientes, 25 docentes e 442 alunos.</p>
+        </div>
+        <div class="page-head__actions">
+          <select class="select" style="width:auto">
+            <option>Mês corrente</option><option>Último trimestre</option><option>Semestre 2026/2</option>
+          </select>
+          <a class="btn" href="indicadores.html"><i data-ico="grafico"></i> Indicadores</a>
+          <button class="btn btn--primary"><i data-ico="imprimir"></i> Relatório para a regional</button>
+        </div>
+      </div>
+
+      <div class="grid g-4">
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-info"><i data-ico="predio"></i></div><div class="kpi__lb">Uso da infraestrutura</div></div>
+          <div class="kpi__vl">64<small>%</small></div>
+          <div class="kpi__ft"><span class="trend trend--up">+6 p.p.</span> vs. julho &middot; meta 75%</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-ok"><i data-ico="grafico"></i></div><div class="kpi__lb">Cumprimento de carga</div></div>
+          <div class="kpi__vl">92<small>%</small></div>
+          <div class="kpi__ft">horas ministradas sobre previstas</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-danger"><i data-ico="alerta"></i></div><div class="kpi__lb">Conflitos no mês</div></div>
+          <div class="kpi__vl">17</div>
+          <div class="kpi__ft"><span class="trend trend--down">&minus;23%</span> após adoção do critério de prioridade</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-purple"><i data-ico="dinheiro"></i></div><div class="kpi__lb">Ociosidade evitável</div></div>
+          <div class="kpi__vl">318<small> h</small></div>
+          <div class="kpi__ft">períodos livres em horário de pico</div>
+        </div>
+      </div>
+
+      <div class="grid g-2-1" style="margin-top:16px;align-items:start">
+
+        <div class="stack">
+
+          <div class="card">
+            <div class="card__head">
+              <h3>Ocupação por tipo de ambiente</h3>
+              <span class="sub">Média mensal &middot; % de períodos preenchidos</span>
+              <div class="right"><a class="btn btn--sm" href="ocupacao.html">Detalhar</a></div>
+            </div>
+            <div class="card__body">
+              <div class="chart-cols" style="height:190px">
+                <div class="c"><div class="vl">88%</div><div class="bar" style="height:88%"></div><div class="lb">Laboratórios</div></div>
+                <div class="c"><div class="vl">61%</div><div class="bar" style="height:61%"></div><div class="lb">Oficinas</div></div>
+                <div class="c"><div class="vl">57%</div><div class="bar alt" style="height:57%"></div><div class="lb">Salas de aula</div></div>
+                <div class="c"><div class="vl">34%</div><div class="bar alt" style="height:34%"></div><div class="lb">Auditório</div></div>
+                <div class="c"><div class="vl">19%</div><div class="bar alt" style="height:19%"></div><div class="lb">Sala de preparo</div></div>
+              </div>
+            </div>
+            <div class="card__foot">
+              <span><i data-ico="info"></i></span>
+              <span>Laboratórios saturados enquanto salas de aula operam com folga &mdash; indício de aula teórica ocupando espaço prático.</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__head">
+              <h3>Desempenho por eixo</h3>
+              <span class="sub">Coordenações da unidade</span>
+            </div>
+            <div class="card__body--flush">
+              <div class="table-wrap">
+                <table class="tb">
+                  <thead>
+                    <tr><th>Eixo</th><th>Coordenação</th><th class="num">Ambientes</th><th class="num">Docentes</th><th>Ocupação</th><th class="num">Conflitos</th><th>Carga cumprida</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="strong">Industrial</td>
+                      <td><div class="cell-user"><div class="avatar avatar--sm">SO</div><div class="nm">Saran Oliveira</div></div></td>
+                      <td class="num">9</td><td class="num">14</td>
+                      <td style="min-width:120px"><div class="meter"><span class="f-danger" style="width:78%"></span></div><div class="muted" style="font-size:11.2px;margin-top:3px">78%</div></td>
+                      <td class="num">12</td>
+                      <td><span class="badge badge--ok">94%</span></td>
+                    </tr>
+                    <tr>
+                      <td class="strong">Eletroeletrônica</td>
+                      <td><div class="cell-user"><div class="avatar avatar--sm">RC</div><div class="nm">Renata Castro</div></div></td>
+                      <td class="num">3</td><td class="num">7</td>
+                      <td><div class="meter"><span class="f-warn" style="width:62%"></span></div><div class="muted" style="font-size:11.2px;margin-top:3px">62%</div></td>
+                      <td class="num">4</td>
+                      <td><span class="badge badge--ok">91%</span></td>
+                    </tr>
+                    <tr>
+                      <td class="strong">Gestão e TI</td>
+                      <td><div class="cell-user"><div class="avatar avatar--sm">AF</div><div class="nm">André Falcão</div></div></td>
+                      <td class="num">2</td><td class="num">4</td>
+                      <td><div class="meter"><span class="f-ok" style="width:41%"></span></div><div class="muted" style="font-size:11.2px;margin-top:3px">41%</div></td>
+                      <td class="num">1</td>
+                      <td><span class="badge badge--warn">85%</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__head"><h3>Evolução da ocupação</h3><span class="sub">Últimos 6 meses</span></div>
+            <div class="card__body">
+              <div class="chart-cols">
+                <div class="c"><div class="vl">49%</div><div class="bar alt" style="height:49%"></div><div class="lb">Mar</div></div>
+                <div class="c"><div class="vl">52%</div><div class="bar alt" style="height:52%"></div><div class="lb">Abr</div></div>
+                <div class="c"><div class="vl">55%</div><div class="bar alt" style="height:55%"></div><div class="lb">Mai</div></div>
+                <div class="c"><div class="vl">54%</div><div class="bar alt" style="height:54%"></div><div class="lb">Jun</div></div>
+                <div class="c"><div class="vl">58%</div><div class="bar" style="height:58%"></div><div class="lb">Jul</div></div>
+                <div class="c"><div class="vl">64%</div><div class="bar" style="height:64%"></div><div class="lb">Ago</div></div>
+              </div>
+            </div>
+            <div class="card__foot"><span class="muted">Barras escuras: meses já com o SIPAE em operação plena.</span></div>
+          </div>
+
+        </div>
+
+        <div class="stack">
+
+          <div class="card">
+            <div class="card__head"><h3>Decisões aguardando a direção</h3><div class="right"><a class="btn btn--sm" href="aprovacoes.html">Ver todas</a></div></div>
+            <div class="list">
+              <div class="list__item">
+                <div class="list__ico i-warn"><i data-ico="dinheiro"></i></div>
+                <div class="list__bd">
+                  <div class="list__tt">Treinamento in company x aula regular</div>
+                  <div class="list__ds">Oficina de Usinagem &middot; 27/08 &middot; P1 a P3. Receita externa de R$ 12.400 contra 32 alunos do CAI.</div>
+                  <div class="list__mt">Encaminhado pela coordenação industrial</div>
+                </div>
+                <div class="list__rt"><a class="btn btn--sm btn--primary" href="aprovacoes.html">Decidir</a></div>
+              </div>
+              <div class="list__item">
+                <div class="list__ico i-info"><i data-ico="auditorio"></i></div>
+                <div class="list__bd">
+                  <div class="list__tt">Reserva do auditório para evento externo</div>
+                  <div class="list__ds">02/09 &middot; turno da tarde &middot; 90 lugares. Duas turmas seriam remanejadas.</div>
+                  <div class="list__mt">Solicitado pela assessoria</div>
+                </div>
+                <div class="list__rt"><a class="btn btn--sm" href="aprovacoes.html">Analisar</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__head"><h3>Alertas institucionais</h3></div>
+            <div class="card__body">
+              <div class="stack" style="gap:12px">
+                <div class="alert alert--danger">
+                  <span class="alert__ic"><i data-ico="alerta"></i></span>
+                  <div>
+                    <div class="alert__tt">Lab. de Comando a 96% de uso</div>
+                    <div>Gargalo estrutural. Sem novo ambiente, 9 turmas disputam o mesmo espaço no próximo semestre.</div>
+                  </div>
+                </div>
+                <div class="alert alert--warn">
+                  <span class="alert__ic"><i data-ico="curso"></i></span>
+                  <div>
+                    <div class="alert__tt">16 aulas teóricas em ambiente prático</div>
+                    <div>Queda de 61% frente a julho, mas ainda acima da meta institucional (zero).</div>
+                  </div>
+                </div>
+                <div class="alert alert--ok">
+                  <span class="alert__ic"><i data-ico="check"></i></span>
+                  <div>
+                    <div class="alert__tt">Tempo de resposta a imprevistos</div>
+                    <div>Ambientes liberados por falta voltam à agenda em 22 minutos, em média.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__head"><h3>Capacidade instalada</h3></div>
+            <div class="card__body">
+              <dl class="dl">
+                <dt>Ambientes</dt><dd>14</dd>
+                <dt>Lugares totais</dt><dd>396</dd>
+                <dt>Períodos/dia</dt><dd>10 (manhã e tarde)</dd>
+                <dt>Períodos/mês</dt><dd>2.800</dd>
+                <dt>Períodos usados</dt><dd>1.792</dd>
+                <dt>Capacidade livre</dt><dd>1.008 períodos</dd>
+              </dl>
+              <div class="divider"></div>
+              <div class="meter meter--lg"><span class="f-brand" style="width:64%"></span></div>
+              <div class="muted" style="font-size:12px;margin-top:7px">64% da capacidade instalada em uso.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/icones.js"></script>
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

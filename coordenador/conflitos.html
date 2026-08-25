@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Conflitos</title>
+<link rel="stylesheet" href="../assets/css/sipae.css">
+</head>
+<body data-role="coordenador" data-page="conflitos" data-title="Conflitos e Desempate" data-crumb="Operação">
+
+<div class="app">
+  <div id="sidebar-slot"></div>
+  <div class="main">
+    <div id="topbar-slot"></div>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h1>Conflitos de alocação</h1>
+          <p class="sub">Quando dois docentes precisam do mesmo ambiente no mesmo período, o desempate segue a prioridade da UC: principal &gt; secundária &gt; terciária.</p>
+        </div>
+        <div class="page-head__actions">
+          <button class="btn">Histórico de decisões</button>
+          <button class="btn btn--primary">Aplicar critério em lote</button>
+        </div>
+      </div>
+
+      <div class="grid g-3" style="margin-bottom:18px">
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-danger"><i data-ico="alerta"></i></div><div class="kpi__lb">Conflitos abertos</div></div>
+          <div class="kpi__vl">3</div>
+          <div class="kpi__ft">2 no Lab. de Comando &middot; 1 na Oficina</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-warn"><i data-ico="ampulheta"></i></div><div class="kpi__lb">Tempo médio de decisão</div></div>
+          <div class="kpi__vl">6<small> h</small></div>
+          <div class="kpi__ft">meta institucional: 24h</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-ok"><i data-ico="check"></i></div><div class="kpi__lb">Resolvidos no mês</div></div>
+          <div class="kpi__vl">14</div>
+          <div class="kpi__ft">11 pelo critério de prioridade</div>
+        </div>
+      </div>
+
+      <!-- Conflito em análise -->
+      <div class="card" style="margin-bottom:18px">
+        <div class="card__head">
+          <h3>Conflito #248 &middot; Lab. de Comando Elétrico</h3>
+          <span class="sub">Terça, 25/08/2026 &middot; P3 (09:00 &ndash; 09:45) &middot; 16 lugares</span>
+          <div class="right"><span class="badge badge--danger">Aguardando decisão</span></div>
+        </div>
+        <div class="card__body">
+
+          <div class="grid g-2">
+
+            <!-- Pedido A -->
+            <div class="card" style="border-color:var(--brand-200);background:var(--brand-050)">
+              <div class="card__body">
+                <div class="row row--between">
+                  <div class="cell-user">
+                    <div class="avatar">ER</div>
+                    <div><div class="nm">Edvaldo Ramos</div><div class="sb">Docente principal &middot; Mecânica</div></div>
+                  </div>
+                  <span class="prio prio--1"><span class="n">1</span> Ambiente principal</span>
+                </div>
+                <div class="divider"></div>
+                <dl class="dl">
+                  <dt>UC</dt><dd>Comandos Elétricos &middot; 60h</dd>
+                  <dt>Turma</dt><dd>MEC-2A (G1) &middot; 15 alunos</dd>
+                  <dt>Natureza</dt><dd>Prática obrigatória</dd>
+                  <dt>Alternativa</dt><dd>Oficina Elétrica Predial (terciária)</dd>
+                  <dt>Saldo da UC</dt><dd>26h a distribuir</dd>
+                  <dt>Solicitado em</dt><dd>19/08 às 14:02</dd>
+                </dl>
+                <div class="divider"></div>
+                <p style="font-size:12.6px;color:var(--ink-2)">
+                  &ldquo;O Lab. de Comando é ambiente principal da UC; a atividade não pode ser executada em sala de aula.&rdquo;
+                </p>
+                <div class="divider"></div>
+                <div class="row row--between">
+                  <span class="strong">Peso calculado</span>
+                  <span class="strong" style="font-size:19px;color:var(--brand-700)">92</span>
+                </div>
+                <div class="meter" style="margin-top:6px"><span class="f-brand" style="width:92%"></span></div>
+              </div>
+            </div>
+
+            <!-- Pedido B -->
+            <div class="card">
+              <div class="card__body">
+                <div class="row row--between">
+                  <div class="cell-user">
+                    <div class="avatar">RL</div>
+                    <div><div class="nm">Rafael Lima</div><div class="sb">Docente principal &middot; Eletroeletrônica</div></div>
+                  </div>
+                  <span class="prio prio--3"><span class="n">3</span> Ambiente terciário</span>
+                </div>
+                <div class="divider"></div>
+                <dl class="dl">
+                  <dt>UC</dt><dd>Instalações Prediais &middot; 40h</dd>
+                  <dt>Turma</dt><dd>ELE-1A (G2) &middot; 16 alunos</dd>
+                  <dt>Natureza</dt><dd>Prática</dd>
+                  <dt>Alternativa</dt><dd>Oficina Elétrica Predial (principal, livre)</dd>
+                  <dt>Saldo da UC</dt><dd>12h a distribuir</dd>
+                  <dt>Solicitado em</dt><dd>19/08 às 16:35</dd>
+                </dl>
+                <div class="divider"></div>
+                <p style="font-size:12.6px;color:var(--ink-2)">
+                  &ldquo;Preferência pelo laboratório por ter bancadas mais novas; oficina atende a atividade.&rdquo;
+                </p>
+                <div class="divider"></div>
+                <div class="row row--between">
+                  <span class="strong">Peso calculado</span>
+                  <span class="strong" style="font-size:19px;color:var(--ink-2)">41</span>
+                </div>
+                <div class="meter" style="margin-top:6px"><span class="f-line" style="width:41%"></span></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Critérios -->
+          <div class="section-title">Critérios de desempate <span class="hint">peso aplicado automaticamente pelo sistema</span></div>
+          <div class="table-wrap">
+            <table class="tb" style="border:1px solid var(--line);border-radius:10px;overflow:hidden">
+              <thead>
+                <tr><th>Critério</th><th class="num">Peso</th><th>Edvaldo Ramos</th><th>Rafael Lima</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="strong">Prioridade do ambiente no plano de curso</td>
+                  <td class="num">40</td>
+                  <td><span class="badge badge--ok">Principal &middot; 40 pts</span></td>
+                  <td><span class="badge badge--muted">Terciário &middot; 10 pts</span></td>
+                </tr>
+                <tr>
+                  <td class="strong">Inexistência de alternativa equivalente</td>
+                  <td class="num">25</td>
+                  <td><span class="badge badge--ok">Sem alternativa &middot; 25 pts</span></td>
+                  <td><span class="badge badge--muted">Oficina livre &middot; 5 pts</span></td>
+                </tr>
+                <tr>
+                  <td class="strong">Saldo de horas a cumprir na UC</td>
+                  <td class="num">15</td>
+                  <td><span class="badge badge--info">26h &middot; 15 pts</span></td>
+                  <td><span class="badge badge--info">12h &middot; 8 pts</span></td>
+                </tr>
+                <tr>
+                  <td class="strong">Ordem de chegada da solicitação</td>
+                  <td class="num">10</td>
+                  <td><span class="badge badge--ok">14:02 &middot; 10 pts</span></td>
+                  <td><span class="badge badge--muted">16:35 &middot; 6 pts</span></td>
+                </tr>
+                <tr>
+                  <td class="strong">Histórico de uso do ambiente no mês</td>
+                  <td class="num">10</td>
+                  <td><span class="badge badge--muted">12 aulas &middot; 2 pts</span></td>
+                  <td><span class="badge badge--ok">2 aulas &middot; 12 pts</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="alert alert--ok" style="margin-top:16px">
+            <span class="alert__ic"><i data-ico="aprovado"></i></span>
+            <div>
+              <div class="alert__tt">Sugestão do sistema: manter Edvaldo Ramos no Lab. de Comando Elétrico</div>
+              <div>Rafael Lima seria realocado para a <b>Oficina Elétrica Predial</b> (ambiente principal da UC dele, livre em P3) sem prejuízo à turma ELE-1A.</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="card__foot" style="gap:8px">
+          <span class="muted">A decisão é registrada em auditoria e notificada aos dois docentes.</span>
+          <div style="margin-left:auto;display:flex;gap:8px">
+            <button class="btn">Decidir manualmente</button>
+            <button class="btn">Dividir períodos (P3 e P4)</button>
+            <button class="btn btn--primary" data-toast="Conflito resolvido" data-toast-detalhe="Os dois docentes foram notificados.">Aceitar sugestão e notificar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demais conflitos -->
+      <div class="card">
+        <div class="card__head"><h3>Outros conflitos abertos</h3></div>
+        <div class="card__body--flush">
+          <div class="table-wrap">
+            <table class="tb">
+              <thead>
+                <tr><th>#</th><th>Ambiente</th><th>Quando</th><th>Disputa</th><th>Sugestão do sistema</th><th class="actions">Ação</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono">#249</td>
+                  <td class="strong">Lab. de Pneumática</td>
+                  <td class="mono">26/08 &middot; P4</td>
+                  <td>Saran Oliveira <span class="prio prio--1"><span class="n">1</span></span> &nbsp;x&nbsp; Juliana Reis <span class="prio prio--2"><span class="n">2</span></span></td>
+                  <td>Manter Saran &middot; mover Juliana para Lab. de Informática</td>
+                  <td class="actions"><button class="btn btn--sm btn--primary">Analisar</button></td>
+                </tr>
+                <tr>
+                  <td class="mono">#250</td>
+                  <td class="strong">Oficina de Usinagem</td>
+                  <td class="mono">27/08 &middot; P1 &ndash; P3</td>
+                  <td>Marcos Prado <span class="prio prio--1"><span class="n">1</span></span> &nbsp;x&nbsp; Treinamento externo</td>
+                  <td><span class="badge badge--warn">Requer decisão da direção</span></td>
+                  <td class="actions"><button class="btn btn--sm">Encaminhar</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/icones.js"></script>
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

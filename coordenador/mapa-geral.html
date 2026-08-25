@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Mapa Geral de Salas</title>
+<link rel="stylesheet" href="../assets/css/sipae.css">
+</head>
+<body data-role="coordenador" data-page="mapa" data-title="Mapa Geral de Salas" data-crumb="Operação">
+
+<div class="app">
+  <div id="sidebar-slot"></div>
+  <div class="main">
+    <div id="topbar-slot"></div>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h1>Mapa geral de salas</h1>
+          <p class="sub">Visão completa da instituição. Você pode remanejar qualquer docente &mdash; relação Nx1.</p>
+        </div>
+        <div class="page-head__actions">
+          <span class="badge badge--ok"><span class="bullet"></span> Ao vivo &middot; 8s</span>
+          <button class="btn"><i data-ico="baixar"></i> Exportar grade</button>
+          <button class="btn"><i data-ico="oficina"></i> Bloquear ambiente</button>
+          <button class="btn btn--primary"><i data-ico="mais"></i> Alocar manualmente</button>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:16px">
+        <div class="card__body" style="padding:14px 16px">
+          <div class="row" style="gap:16px">
+            <div class="row" style="gap:8px">
+              <span class="muted" style="font-size:12.4px">Data</span>
+              <input class="input" type="date" value="2026-08-20" style="width:158px">
+            </div>
+            <div class="seg" id="seg-turno">
+              <button class="is-on" data-value="manha">Manhã</button>
+              <button data-value="tarde">Tarde</button>
+            </div>
+            <div class="seg" id="seg-curso">
+              <button class="is-on" data-value="CT">CT &middot; 45 min</button>
+              <button data-value="CAI">CAI &middot; 50 min</button>
+            </div>
+            <select class="select" id="filtro-bloco" style="width:auto">
+              <option value="">Todos os blocos</option>
+              <option value="Bloco A">Bloco A</option>
+              <option value="Bloco B">Bloco B</option>
+              <option value="Bloco C">Bloco C</option>
+              <option value="Bloco D">Bloco D</option>
+            </select>
+            <select class="select" id="filtro-tipo" style="width:auto">
+              <option value="">Todos os tipos</option>
+              <option value="Sala de aula">Salas de aula</option>
+              <option value="Laboratório">Laboratórios</option>
+              <option value="Oficina">Oficinas</option>
+            </select>
+            <div class="row" style="margin-left:auto;gap:8px">
+              <span class="badge badge--danger">3 conflitos</span>
+              <span class="badge badge--warn">4 pendentes</span>
+              <span class="badge badge--muted">18 livres</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid g-3-2" style="align-items:start">
+
+        <div class="card">
+          <div class="card__head">
+            <h3>Grade institucional</h3>
+            <span class="sub" id="rotulo-grade"></span>
+            <div class="right"><span class="muted" style="font-size:11.8px">Clique em uma célula para remanejar</span></div>
+          </div>
+          <div class="card__body--flush" id="grade-mapa"></div>
+          <div class="card__foot">
+            <div class="legend">
+              <span><i class="lg-livre"></i>Disponível</span>
+              <span><i class="lg-ocup"></i>Ocupada</span>
+              <span><i class="lg-pend"></i>Pendente</span>
+              <span><i class="lg-conf"></i>Conflito</span>
+              <span><i class="lg-trei"></i>Treinamento</span>
+              <span><i class="lg-bloq"></i>Bloqueada</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack">
+
+          <!-- Painel de remanejamento -->
+          <div class="card">
+            <div class="card__head">
+              <h3>Remanejar alocação</h3>
+              <div class="right"><span class="badge badge--info">Nx1</span></div>
+            </div>
+            <div class="card__body">
+              <div class="alert alert--info" style="margin-bottom:14px">
+                <span class="alert__ic"><i data-ico="local"></i></span>
+                <div>
+                  <div class="alert__tt">Lab. de Comando Elétrico &middot; P4</div>
+                  <div>Edvaldo Ramos &middot; Comandos Elétricos &middot; MEC-2A (G1) &middot; 15 alunos</div>
+                </div>
+              </div>
+
+              <div class="form-grid" style="grid-template-columns:1fr">
+                <div class="field">
+                  <label>Novo ambiente</label>
+                  <select class="select">
+                    <option>Lab. de Comando Elétrico (atual)</option>
+                    <option>Oficina Elétrica Predial &middot; livre &middot; terciário</option>
+                    <option>Lab. de Metrologia &middot; livre &middot; incompatível</option>
+                  </select>
+                  <span class="hint">Ambientes incompatíveis exigem justificativa registrada.</span>
+                </div>
+                <div class="field">
+                  <label>Novo período</label>
+                  <select class="select">
+                    <option>P4 &middot; 10:00 &ndash; 10:45 (atual)</option>
+                    <option>P5 &middot; 10:45 &ndash; 11:30 &middot; livre</option>
+                    <option>P2 &middot; 08:15 &ndash; 09:00 &middot; ocupado</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Motivo do remanejamento <span class="req">*</span></label>
+                  <textarea class="textarea" style="min-height:64px" placeholder="Visível para o docente na notificação."></textarea>
+                </div>
+                <label class="check">
+                  <input type="checkbox" checked>
+                  <span><span class="tt">Notificar docente e turma</span><span class="dd">Envia alerta no painel e por e-mail</span></span>
+                </label>
+              </div>
+
+              <div class="row" style="margin-top:14px">
+                <button class="btn btn--primary" data-toast="Remanejamento confirmado" data-toast-detalhe="Docente e turma foram notificados.">Confirmar remanejamento</button>
+                <button class="btn">Cancelar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__head"><h3>Ambientes críticos hoje</h3></div>
+            <div class="list">
+              <div class="list__item">
+                <div class="list__ico i-danger"><i data-ico="lab"></i></div>
+                <div class="list__bd">
+                  <div class="list__tt">Lab. de Comando Elétrico</div>
+                  <div class="list__ds">100% ocupado &middot; 2 solicitações em disputa</div>
+                </div>
+                <div class="list__rt"><span class="badge badge--danger">Crítico</span></div>
+              </div>
+              <div class="list__item">
+                <div class="list__ico i-warn"><i data-ico="oficina"></i></div>
+                <div class="list__bd">
+                  <div class="list__tt">Oficina de Usinagem</div>
+                  <div class="list__ds">60% ocupado &middot; disputa com treinamento externo</div>
+                </div>
+                <div class="list__rt"><span class="badge badge--warn">Atenção</span></div>
+              </div>
+              <div class="list__item">
+                <div class="list__ico i-muted"><i data-ico="lab"></i></div>
+                <div class="list__bd">
+                  <div class="list__tt">Lab. de Usinagem CNC</div>
+                  <div class="list__ds">Bloqueado para manutenção até 12:00</div>
+                </div>
+                <div class="list__rt"><button class="btn btn--sm">Desbloquear</button></div>
+              </div>
+              <div class="list__item">
+                <div class="list__ico i-ok"><i data-ico="curso"></i></div>
+                <div class="list__bd">
+                  <div class="list__tt">Sala de Aula 04</div>
+                  <div class="list__ds">Subutilizada &middot; 1 de 5 períodos ocupados</div>
+                </div>
+                <div class="list__rt"><span class="badge badge--ok">Ociosa</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert--warn">
+            <span class="alert__ic"><i data-ico="alerta"></i></span>
+            <div>
+              <div class="alert__tt">Uso incompatível detectado</div>
+              <div>AUT-1A (aula teórica de Matemática) está alocada no Lab. de Informática em P3. Sugestão: mover para SA-04, livre no período.</div>
+              <div class="row" style="margin-top:9px">
+                <button class="btn btn--sm btn--primary" data-toast="Sugestão aplicada" data-toast-detalhe="Turma movida para a SA-04.">Aplicar sugestão</button>
+                <button class="btn btn--sm">Ignorar</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/icones.js"></script>
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/shell.js"></script>
+<script>
+  let cursoAtual = 'CT', turnoAtual = 'manha';
+
+  function desenhar() {
+    const bloco = document.getElementById('filtro-bloco').value;
+    const tipo  = document.getElementById('filtro-tipo').value;
+    const lista = AMBIENTES.filter(a => (!bloco || a.bloco === bloco) && (!tipo || a.tipo.startsWith(tipo)));
+    renderGrade('#grade-mapa', { curso: cursoAtual, turno: turnoAtual, ambientes: lista, papel: 'coordenador' });
+    document.getElementById('rotulo-grade').textContent =
+      cursoAtual + ' · ' + (turnoAtual === 'manha' ? 'manhã' : 'tarde') + ' · ' + lista.length + ' ambientes';
+  }
+
+  window.aoTrocarSegmento = (valor, grupo) => {
+    if (grupo.id === 'seg-curso') cursoAtual = valor;
+    if (grupo.id === 'seg-turno') turnoAtual = valor;
+    desenhar();
+  };
+  document.getElementById('filtro-bloco').addEventListener('change', desenhar);
+  document.getElementById('filtro-tipo').addEventListener('change', desenhar);
+  document.addEventListener('DOMContentLoaded', desenhar);
+</script>
+</body>
+</html>

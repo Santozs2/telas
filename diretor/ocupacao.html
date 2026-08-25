@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Ocupação e Capacidade</title>
+<link rel="stylesheet" href="../assets/css/sipae.css">
+</head>
+<body data-role="diretor" data-page="ocupacao" data-title="Ocupação e Capacidade" data-crumb="Visão institucional">
+
+<div class="app">
+  <div id="sidebar-slot"></div>
+  <div class="main">
+    <div id="topbar-slot"></div>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h1>Ocupação e capacidade</h1>
+          <p class="sub">Onde a infraestrutura está saturada, onde está ociosa e qual o custo de cada decisão de alocação.</p>
+        </div>
+        <div class="page-head__actions">
+          <div class="seg">
+            <button class="is-on">Mês</button><button>Trimestre</button><button>Semestre</button>
+          </div>
+          <button class="btn"><i data-ico="baixar"></i> Exportar</button>
+        </div>
+      </div>
+
+      <div class="grid g-4" style="margin-bottom:18px">
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-danger"><i data-ico="lab"></i></div><div class="kpi__lb">Ambientes saturados</div></div>
+          <div class="kpi__vl">2</div>
+          <div class="kpi__ft">acima de 85% de ocupação</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-warn"><i data-ico="grafico"></i></div><div class="kpi__lb">Ambientes em equilíbrio</div></div>
+          <div class="kpi__vl">7</div>
+          <div class="kpi__ft">entre 50% e 85%</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-ok"><i data-ico="caixa"></i></div><div class="kpi__lb">Ambientes ociosos</div></div>
+          <div class="kpi__vl">5</div>
+          <div class="kpi__ft">abaixo de 50%</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-purple"><i data-ico="docentes"></i></div><div class="kpi__lb">Aproveitamento de lugares</div></div>
+          <div class="kpi__vl">71<small>%</small></div>
+          <div class="kpi__ft">alunos presentes sobre lugares reservados</div>
+        </div>
+      </div>
+
+      <div class="grid g-3-2" style="align-items:start;margin-bottom:18px">
+
+        <div class="card">
+          <div class="card__head">
+            <h3>Mapa de calor por período</h3>
+            <span class="sub">Média do mês &middot; % de ambientes ocupados</span>
+          </div>
+          <div class="card__body--flush">
+            <div class="table-wrap">
+              <table class="tb" style="text-align:center">
+                <thead>
+                  <tr>
+                    <th style="text-align:left">Turno / período</th>
+                    <th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th>
+                  </tr>
+                </thead>
+                <tbody id="heat"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card__foot">
+            <div class="legend">
+              <span><i style="background:rgba(61,220,151,.16)"></i>Até 40%</span>
+              <span><i style="background:rgba(74,158,255,.24)"></i>41 a 60%</span>
+              <span><i style="background:rgba(240,180,95,.26)"></i>61 a 80%</span>
+              <span><i style="background:rgba(255,125,109,.30)"></i>81 a 95%</span>
+              <span><i style="background:rgba(255,125,109,.55)"></i>Acima de 95%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack">
+          <div class="card">
+            <div class="card__head"><h3>Leitura do mapa</h3></div>
+            <div class="card__body">
+              <div class="stack" style="gap:13px;font-size:12.8px">
+                <div class="row" style="gap:10px;align-items:flex-start">
+                  <span class="badge badge--danger">Pico</span>
+                  <span>P2 e P3 da manhã concentram a demanda: 9 de 14 ambientes ocupados simultaneamente.</span>
+                </div>
+                <div class="row" style="gap:10px;align-items:flex-start">
+                  <span class="badge badge--warn">Atenção</span>
+                  <span>P5 da manhã cai para 38% &mdash; janela para deslocar aulas teóricas e aliviar o pico.</span>
+                </div>
+                <div class="row" style="gap:10px;align-items:flex-start">
+                  <span class="badge badge--ok">Folga</span>
+                  <span>Turno da tarde opera 22 p.p. abaixo da manhã. Absorve turmas sem investimento novo.</span>
+                </div>
+              </div>
+              <div class="divider"></div>
+              <div class="strong" style="margin-bottom:8px">Simulação</div>
+              <p class="muted" style="font-size:12.4px">
+                Deslocar 3 turmas teóricas do pico da manhã para P5 e para a tarde reduziria a saturação
+                dos laboratórios de 88% para <b>73%</b>, sem obra nem contratação.
+              </p>
+              <button class="btn btn--primary btn--block" style="margin-top:12px">Enviar simulação à coordenação</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:18px">
+        <div class="card__head">
+          <h3>Ranking de ambientes</h3>
+          <span class="sub">Ocupação, disputa e adequação de uso</span>
+          <div class="right">
+            <select class="select" style="width:auto"><option>Todos os tipos</option><option>Laboratórios</option><option>Oficinas</option><option>Salas de aula</option></select>
+          </div>
+        </div>
+        <div class="card__body--flush">
+          <div class="table-wrap">
+            <table class="tb">
+              <thead>
+                <tr><th>#</th><th>Ambiente</th><th>Tipo</th><th class="num">Lugares</th><th>Ocupação</th><th class="num">Disputas</th><th class="num">Uso incompatível</th><th>Diagnóstico</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono">1</td><td class="strong">Lab. de Comando Elétrico</td><td><span class="tag">Laboratório</span></td><td class="num">16</td>
+                  <td style="min-width:130px"><div class="meter"><span class="f-danger" style="width:96%"></span></div><div class="muted" style="font-size:11.2px;margin-top:3px">96%</div></td>
+                  <td class="num">9</td><td class="num">0</td>
+                  <td><span class="badge badge--danger">Ampliar capacidade</span></td>
+                </tr>
+                <tr>
+                  <td class="mono">2</td><td class="strong">Lab. de Pneumática</td><td><span class="tag">Laboratório</span></td><td class="num">16</td>
+                  <td><div class="meter"><span class="f-danger" style="width:88%"></span></div><div class="muted" style="font-size:11.2px;margin-top:3px">88%</div></td>
+                  <td class="num">5</td><td class="num">2</td>
+                  <td><span class="badge badge--warn">Monitorar</span></td>
+                </tr>
+                <tr>
+                  <td class="mono">3</td><td class="strong">Oficina de Usinagem</td><td><span class="tag">Oficina</span></td><td class="num">16</td>
+                  <td><div class="meter"><span class="f-warn" style="width:74%"></span></div><div class="muted" style="font-size:11.2px;margin-top:3px">74%</div></td>
+                  <td class="num">2</td><td class="num">0</td>
+                  <td><span class="badge badge--ok">Adequado</span></td>
+                </tr>
+                <tr>
+                  <td class="mono">4</td><td class="strong">Sala de Aula 01</td><td><span class="tag">Sala de aula</span></td><td class="num">40</td>
+                  <td><div class="meter"><span class="f-brand" style="width:71%"></span></div><div class="muted" style="font-size:11.2px;margin-top:3px">71%</div></td>
+                  <td class="num">0</td><td class="num">0</td>
+                  <td><span class="badge badge--ok">Adequado</span></td>
+                </tr>
+                <tr>
+                  <td class="mono">5</td><td class="strong">Lab. de Informática</td><td><span class="tag">Laboratório</span></td><td class="num">20</td>
+                  <td><div class="meter"><span class="f-brand" style="width:58%"></span></div><div class="muted" style="font-size:11.2px;margin-top:3px">58%</div></td>
+                  <td class="num">1</td><td class="num">14</td>
+                  <td><span class="badge badge--warn">Rever vínculo de UCs</span></td>
+                </tr>
+                <tr>
+                  <td class="mono">6</td><td class="strong">Auditório</td><td><span class="tag">Auditório</span></td><td class="num">120</td>
+                  <td><div class="meter"><span class="f-ok" style="width:34%"></span></div><div class="muted" style="font-size:11.2px;margin-top:3px">34%</div></td>
+                  <td class="num">0</td><td class="num">0</td>
+                  <td><span class="badge badge--muted">Ocioso</span></td>
+                </tr>
+                <tr>
+                  <td class="mono">7</td><td class="strong">Sala de Aula 04</td><td><span class="tag">Sala de aula</span></td><td class="num">32</td>
+                  <td><div class="meter"><span class="f-ok" style="width:22%"></span></div><div class="muted" style="font-size:11.2px;margin-top:3px">22%</div></td>
+                  <td class="num">0</td><td class="num">0</td>
+                  <td><span class="badge badge--muted">Ocioso</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid g-2">
+        <div class="card">
+          <div class="card__head"><h3>Capacidade x demanda por eixo</h3><span class="sub">Períodos necessários no semestre</span></div>
+          <div class="card__body">
+            <div class="bars">
+              <div class="bar-row">
+                <div class="top"><span class="l">Industrial &middot; laboratórios</span><span class="r">demanda 118% da capacidade</span></div>
+                <div class="meter"><span class="f-danger" style="width:100%"></span></div>
+              </div>
+              <div class="bar-row">
+                <div class="top"><span class="l">Industrial &middot; oficinas</span><span class="r">demanda 76%</span></div>
+                <div class="meter"><span class="f-warn" style="width:76%"></span></div>
+              </div>
+              <div class="bar-row">
+                <div class="top"><span class="l">Eletroeletrônica</span><span class="r">demanda 64%</span></div>
+                <div class="meter"><span class="f-brand" style="width:64%"></span></div>
+              </div>
+              <div class="bar-row">
+                <div class="top"><span class="l">Gestão e TI</span><span class="r">demanda 41%</span></div>
+                <div class="meter"><span class="f-ok" style="width:41%"></span></div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="hint"><span><i data-ico="alerta"></i></span><span>A demanda por laboratórios do eixo industrial já excede a capacidade instalada em 18%.</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__head"><h3>Cenários para o próximo semestre</h3></div>
+          <div class="card__body--flush">
+            <table class="tb">
+              <thead><tr><th>Cenário</th><th>Efeito na saturação</th><th>Investimento</th><th>Prazo</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td class="strong">Redistribuir teóricas para SA-04 e tarde</td>
+                  <td><span class="badge badge--ok">88% &rarr; 73%</span></td>
+                  <td class="muted">Nenhum</td>
+                  <td class="muted">Imediato</td>
+                </tr>
+                <tr>
+                  <td class="strong">Abrir terceiro turno no Lab. de Comando</td>
+                  <td><span class="badge badge--ok">96% &rarr; 68%</span></td>
+                  <td class="muted">Hora-aula noturna</td>
+                  <td class="muted">1 mês</td>
+                </tr>
+                <tr>
+                  <td class="strong">Duplicar bancadas do Lab. de Comando</td>
+                  <td><span class="badge badge--ok">96% &rarr; 52%</span></td>
+                  <td class="muted">Alto</td>
+                  <td class="muted">2 semestres</td>
+                </tr>
+                <tr>
+                  <td class="strong">Manter como está</td>
+                  <td><span class="badge badge--danger">96% &rarr; 104%</span></td>
+                  <td class="muted">&mdash;</td>
+                  <td class="muted">&mdash;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card__foot"><span class="muted">Projeções calculadas sobre os planos de curso já cadastrados para 2027/1.</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/icones.js"></script>
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/shell.js"></script>
+<script>
+  (function heatmap() {
+    const linhas = [
+      ['Manhã', [62, 91, 96, 78, 38]],
+      ['Tarde', [55, 70, 74, 58, 26]]
+    ];
+    const cor = v => v > 95 ? 'rgba(255,125,109,.55)' : v > 80 ? 'rgba(255,125,109,.30)' : v > 60 ? 'rgba(240,180,95,.26)' : v > 40 ? 'rgba(74,158,255,.24)' : 'rgba(61,220,151,.16)';
+    document.getElementById('heat').innerHTML = linhas.map(([turno, vals]) => `
+      <tr>
+        <td class="strong" style="text-align:left">${turno}</td>
+        ${vals.map(v => `<td style="background:${cor(v)};font-weight:650">${v}%</td>`).join('')}
+      </tr>`).join('');
+  })();
+</script>
+</body>
+</html>

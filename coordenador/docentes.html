@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Docentes</title>
+<link rel="stylesheet" href="../assets/css/sipae.css">
+</head>
+<body data-role="coordenador" data-page="docentes" data-title="Docentes" data-crumb="Gestão">
+
+<div class="app">
+  <div id="sidebar-slot"></div>
+  <div class="main">
+    <div id="topbar-slot"></div>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h1>Docentes</h1>
+          <p class="sub">Presença, localização atual e carga alocada. É aqui que se registra falta e se libera o ambiente para outro uso.</p>
+        </div>
+        <div class="page-head__actions">
+          <button class="btn"><i data-ico="baixar"></i> Relatório de presença</button>
+          <button class="btn btn--primary"><i data-ico="mais"></i> Vincular docente</button>
+        </div>
+      </div>
+
+      <div class="grid g-4" style="margin-bottom:18px">
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-ok"><i data-ico="docente"></i></div><div class="kpi__lb">Presentes agora</div></div>
+          <div class="kpi__vl">22<small>/25</small></div>
+          <div class="kpi__ft">14 em aula &middot; 8 em janela livre</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-danger"><i data-ico="recusado"></i></div><div class="kpi__lb">Faltas hoje</div></div>
+          <div class="kpi__vl">2</div>
+          <div class="kpi__ft">4 períodos liberados</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-warn"><i data-ico="oficina"></i></div><div class="kpi__lb">Docentes auxiliares ativos</div></div>
+          <div class="kpi__vl">6</div>
+          <div class="kpi__ft">em turmas divididas em grupos</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-info"><i data-ico="grafico"></i></div><div class="kpi__lb">Carga média alocada</div></div>
+          <div class="kpi__vl">78<small>%</small></div>
+          <div class="kpi__ft">do previsto no plano de curso</div>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <div class="tab is-on">Situação agora</div>
+        <div class="tab">Carga e saldo</div>
+        <div class="tab">Faltas do mês</div>
+      </div>
+
+      <div class="card" style="margin-bottom:18px">
+        <div class="card__head">
+          <h3>Situação no período P3 &middot; 09:10 &ndash; 10:00</h3>
+          <div class="right">
+            <label class="search" style="width:220px"><span><i data-ico="busca"></i></span><input placeholder="Buscar docente"></label>
+            <select class="select" style="width:auto"><option>Todos os cursos</option><option>CAI Mecânica</option><option>CT Automação</option></select>
+          </div>
+        </div>
+        <div class="card__body--flush">
+          <div class="table-wrap">
+            <table class="tb">
+              <thead>
+                <tr><th>Docente</th><th>Curso / turma</th><th>Onde está</th><th>Papel</th><th>Situação</th><th>Próxima aula</th><th class="actions">Ações</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="cell-user"><div class="avatar avatar--sm">ER</div><div><div class="nm">Edvaldo Ramos</div><div class="sb">Mecânica Industrial</div></div></div></td>
+                  <td>CAI &middot; MEC-2A</td>
+                  <td class="strong">Lab. de Comando Elétrico</td>
+                  <td><span class="badge badge--info">Principal</span></td>
+                  <td><span class="badge badge--ok"><span class="bullet"></span> Em aula</span></td>
+                  <td class="mono">P4 &middot; mesmo local</td>
+                  <td class="actions"><button class="btn btn--sm">Agenda</button><button class="btn btn--sm">Remanejar</button></td>
+                </tr>
+                <tr>
+                  <td><div class="cell-user"><div class="avatar avatar--sm">BA</div><div><div class="nm">Bruno Alves</div><div class="sb">Soldagem</div></div></div></td>
+                  <td>CAI &middot; MEC-2A</td>
+                  <td class="strong">Lab. de Comando Elétrico</td>
+                  <td><span class="badge badge--warn">Auxiliar</span></td>
+                  <td><span class="badge badge--ok"><span class="bullet"></span> Em aula</span></td>
+                  <td class="mono">P4 &middot; Of. Soldagem</td>
+                  <td class="actions"><button class="btn btn--sm">Agenda</button><button class="btn btn--sm">Remanejar</button></td>
+                </tr>
+                <tr>
+                  <td><div class="cell-user"><div class="avatar avatar--sm">MP</div><div><div class="nm">Marcos Prado</div><div class="sb">Usinagem</div></div></div></td>
+                  <td>CAI &middot; MEC-2B</td>
+                  <td class="strong">Oficina de Usinagem</td>
+                  <td><span class="badge badge--info">Principal</span></td>
+                  <td><span class="badge badge--ok"><span class="bullet"></span> Em aula</span></td>
+                  <td class="mono">P4 &middot; Lab. CNC</td>
+                  <td class="actions"><button class="btn btn--sm">Agenda</button><button class="btn btn--sm">Remanejar</button></td>
+                </tr>
+                <tr>
+                  <td><div class="cell-user"><div class="avatar avatar--sm">JR</div><div><div class="nm">Juliana Reis</div><div class="sb">Automação</div></div></div></td>
+                  <td>CT &middot; AUT-1A</td>
+                  <td class="strong">Lab. de Informática</td>
+                  <td><span class="badge badge--info">Principal</span></td>
+                  <td><span class="badge badge--warn">Uso incompatível</span></td>
+                  <td class="mono">P4 &middot; Lab. Informática</td>
+                  <td class="actions"><button class="btn btn--sm btn--primary">Mover para SA-04</button></td>
+                </tr>
+                <tr>
+                  <td><div class="cell-user"><div class="avatar avatar--sm">SO</div><div><div class="nm">Saran Oliveira</div><div class="sb">Pneumática</div></div></div></td>
+                  <td>CT &middot; AUT-2A</td>
+                  <td class="strong">Lab. de Pneumática</td>
+                  <td><span class="badge badge--info">Principal</span></td>
+                  <td><span class="badge badge--ok"><span class="bullet"></span> Em aula</span></td>
+                  <td class="mono">P4 &middot; pendente</td>
+                  <td class="actions"><button class="btn btn--sm">Agenda</button><button class="btn btn--sm">Remanejar</button></td>
+                </tr>
+                <tr>
+                  <td><div class="cell-user"><div class="avatar avatar--sm">PN</div><div><div class="nm">Paulo Nunes</div><div class="sb">Qualidade</div></div></div></td>
+                  <td>CAI &middot; MEC-3A</td>
+                  <td class="muted">Sem alocação neste período</td>
+                  <td><span class="badge badge--info">Principal</span></td>
+                  <td><span class="badge badge--muted">Livre</span></td>
+                  <td class="mono">P4 &middot; SA-03</td>
+                  <td class="actions"><button class="btn btn--sm">Agenda</button><button class="btn btn--sm">Alocar</button></td>
+                </tr>
+                <tr style="background:rgba(255,125,109,.07)">
+                  <td><div class="cell-user"><div class="avatar avatar--sm" style="background:var(--danger-050);color:var(--danger)">CM</div><div><div class="nm">Carla Mendes</div><div class="sb">Mecânica Aplicada</div></div></div></td>
+                  <td>CAI &middot; MEC-3A</td>
+                  <td class="muted">&mdash;</td>
+                  <td><span class="badge badge--info">Principal</span></td>
+                  <td><span class="badge badge--danger">Faltou</span></td>
+                  <td class="mono">&mdash;</td>
+                  <td class="actions">
+                    <button class="btn btn--sm">Ver aulas afetadas</button>
+                    <button class="btn btn--sm btn--ok" data-toast="Sala liberada" data-toast-detalhe="SA-01 disponível em P4 e P5.">Liberar SA-01</button>
+                  </td>
+                </tr>
+                <tr style="opacity:.72">
+                  <td><div class="cell-user"><div class="avatar avatar--sm">RL</div><div><div class="nm">Rafael Lima</div><div class="sb">Eletroeletrônica</div></div></div></td>
+                  <td>CAI &middot; ELE-1A</td>
+                  <td class="muted">Afastamento &middot; até 22/08</td>
+                  <td><span class="badge badge--info">Principal</span></td>
+                  <td><span class="badge badge--muted">Afastado</span></td>
+                  <td class="mono">25/08 &middot; P3</td>
+                  <td class="actions"><button class="btn btn--sm">Cobrir aulas</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card__foot">
+          <span><i data-ico="info"></i></span>
+          <span>Ao registrar falta, todas as reservas do docente no dia são liberadas e os ambientes voltam a aparecer como disponíveis imediatamente.</span>
+        </div>
+      </div>
+
+      <div class="grid g-2">
+        <div class="card">
+          <div class="card__head"><h3>Ambientes liberados por falta hoje</h3><span class="sub">Disponíveis para realocação</span></div>
+          <div class="list">
+            <div class="list__item">
+              <div class="list__ico i-ok"><i data-ico="curso"></i></div>
+              <div class="list__bd">
+                <div class="list__tt">Sala de Aula 01 &middot; P4 e P5</div>
+                <div class="list__ds">Liberada por falta de Carla Mendes &middot; 40 lugares</div>
+                <div class="list__mt">Liberada às 09:12</div>
+              </div>
+              <div class="list__rt"><button class="btn btn--sm btn--primary" data-toast="Ambiente realocado" data-toast-detalhe="">Realocar</button></div>
+            </div>
+            <div class="list__item">
+              <div class="list__ico i-ok"><i data-ico="oficina"></i></div>
+              <div class="list__bd">
+                <div class="list__tt">Oficina de Usinagem &middot; P4</div>
+                <div class="list__ds">Cancelamento de Marcos Prado &middot; 16 lugares</div>
+                <div class="list__mt">Liberada às 07:05</div>
+              </div>
+              <div class="list__rt"><button class="btn btn--sm btn--primary" data-toast="Ambiente realocado" data-toast-detalhe="">Realocar</button></div>
+            </div>
+            <div class="list__item">
+              <div class="list__ico i-muted"><i data-ico="lab"></i></div>
+              <div class="list__bd">
+                <div class="list__tt">Lab. de Comando Elétrico &middot; P5</div>
+                <div class="list__ds">Solicitação pendente sem resposta há 6h</div>
+                <div class="list__mt">Vence hoje às 18:00</div>
+              </div>
+              <div class="list__rt"><a class="btn btn--sm" href="solicitacoes.html">Decidir</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__head"><h3>Carga alocada por docente</h3><span class="sub">Agosto/2026</span></div>
+          <div class="card__body">
+            <div class="bars">
+              <div class="bar-row"><div class="top"><span class="l">Edvaldo Ramos</span><span class="r">158h / 195h</span></div><div class="meter"><span class="f-brand" style="width:81%"></span></div></div>
+              <div class="bar-row"><div class="top"><span class="l">Saran Oliveira</span><span class="r">172h / 180h</span></div><div class="meter"><span class="f-danger" style="width:96%"></span></div></div>
+              <div class="bar-row"><div class="top"><span class="l">Marcos Prado</span><span class="r">120h / 200h</span></div><div class="meter"><span class="f-warn" style="width:60%"></span></div></div>
+              <div class="bar-row"><div class="top"><span class="l">Juliana Reis</span><span class="r">140h / 170h</span></div><div class="meter"><span class="f-brand" style="width:82%"></span></div></div>
+              <div class="bar-row"><div class="top"><span class="l">Paulo Nunes</span><span class="r">96h / 160h</span></div><div class="meter"><span class="f-ok" style="width:60%"></span></div></div>
+            </div>
+          </div>
+          <div class="card__foot"><span class="muted">Saran Oliveira está a 8h do limite &mdash; novas alocações exigem revisão do plano.</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/icones.js"></script>
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

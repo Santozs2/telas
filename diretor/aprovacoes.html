@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Aprovações</title>
+<link rel="stylesheet" href="../assets/css/sipae.css">
+</head>
+<body data-role="diretor" data-page="aprovacoes" data-title="Aprovações de Exceção" data-crumb="Governança">
+
+<div class="app">
+  <div id="sidebar-slot"></div>
+  <div class="main">
+    <div id="topbar-slot"></div>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h1>Aprovações de exceção</h1>
+          <p class="sub">Casos que a coordenação não pode decidir sozinha: uso comercial de ambiente, eventos institucionais e quebra de regra do plano de curso.</p>
+        </div>
+        <div class="page-head__actions">
+          <button class="btn">Histórico</button>
+          <button class="btn">Política de exceções</button>
+        </div>
+      </div>
+
+      <div class="grid g-3" style="margin-bottom:18px">
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-warn"><i data-ico="ampulheta"></i></div><div class="kpi__lb">Aguardando decisão</div></div>
+          <div class="kpi__vl">2</div>
+          <div class="kpi__ft">1 vence hoje</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-ok"><i data-ico="check"></i></div><div class="kpi__lb">Aprovadas no semestre</div></div>
+          <div class="kpi__vl">11</div>
+          <div class="kpi__ft">8 treinamentos externos</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-purple"><i data-ico="dinheiro"></i></div><div class="kpi__lb">Receita de uso externo</div></div>
+          <div class="kpi__vl">R$ 84<small> mil</small></div>
+          <div class="kpi__ft">no semestre &middot; 96 períodos cedidos</div>
+        </div>
+      </div>
+
+      <!-- Caso 1 -->
+      <div class="card" style="margin-bottom:18px">
+        <div class="card__head">
+          <h3>Exceção #31 &middot; Treinamento in company x aula regular</h3>
+          <span class="sub">Oficina de Usinagem &middot; 27/08 &middot; P1 a P3</span>
+          <div class="right"><span class="badge badge--danger">Vence hoje às 18:00</span></div>
+        </div>
+        <div class="card__body">
+          <div class="grid g-2">
+
+            <div class="card">
+              <div class="card__body">
+                <div class="row row--between">
+                  <div class="strong">Aula regular</div>
+                  <span class="badge badge--info">CAI Mecânica</span>
+                </div>
+                <div class="divider"></div>
+                <dl class="dl">
+                  <dt>Docente</dt><dd>Marcos Prado</dd>
+                  <dt>UC</dt><dd>Processos de Usinagem (principal)</dd>
+                  <dt>Turma</dt><dd>MEC-2B &middot; 32 alunos em 2 grupos</dd>
+                  <dt>Impacto</dt><dd>3 períodos a repor</dd>
+                  <dt>Alternativa</dt><dd>Lab. CNC &middot; comporta só 12 alunos</dd>
+                </dl>
+                <div class="divider"></div>
+                <div class="hint"><span><i data-ico="alerta"></i></span><span>Sem oficina, a turma perde prática obrigatória e a UC atrasa 3h.</span></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__body">
+                <div class="row row--between">
+                  <div class="strong">Treinamento externo</div>
+                  <span class="badge badge--purple">Empresa parceira</span>
+                </div>
+                <div class="divider"></div>
+                <dl class="dl">
+                  <dt>Solicitante</dt><dd>Relacionamento com o mercado</dd>
+                  <dt>Turma</dt><dd>16 colaboradores</dd>
+                  <dt>Receita</dt><dd>R$ 12.400</dd>
+                  <dt>Flexibilidade</dt><dd>Empresa aceita 03/09</dd>
+                  <dt>Instrutor</dt><dd>Marcos Prado (mesmo docente)</dd>
+                </dl>
+                <div class="divider"></div>
+                <div class="hint"><span><i data-ico="info"></i></span><span>Data alternativa livre na oficina em 03/09, mesmo turno.</span></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="alert alert--ok" style="margin-top:16px">
+            <span class="alert__ic"><i data-ico="aprovado"></i></span>
+            <div>
+              <div class="alert__tt">Recomendação do sistema: manter a aula regular e mover o treinamento para 03/09</div>
+              <div>Preserva a carga prática da MEC-2B e a receita, já que a empresa sinalizou flexibilidade de data.</div>
+            </div>
+          </div>
+        </div>
+        <div class="card__foot" style="gap:8px">
+          <span class="muted">A decisão fica registrada em auditoria com sua justificativa.</span>
+          <div style="margin-left:auto;display:flex;gap:8px">
+            <button class="btn btn--danger">Priorizar treinamento</button>
+            <button class="btn">Decidir com justificativa</button>
+            <button class="btn btn--primary" data-toast="Decisão registrada" data-toast-detalhe="Treinamento remarcado para 03/09.">Aceitar recomendação</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Caso 2 -->
+      <div class="card" style="margin-bottom:18px">
+        <div class="card__head">
+          <h3>Exceção #32 &middot; Cessão do auditório para evento externo</h3>
+          <span class="sub">02/09 &middot; turno da tarde &middot; 120 lugares</span>
+          <div class="right"><span class="badge badge--warn">Aguardando decisão</span></div>
+        </div>
+        <div class="card__body">
+          <div class="grid g-3">
+            <div>
+              <div class="muted" style="font-size:12.2px">Solicitante</div>
+              <div class="strong">Assessoria institucional</div>
+              <div class="muted" style="font-size:12.2px;margin-top:9px">Evento</div>
+              <div class="strong">Encontro de empresas parceiras</div>
+            </div>
+            <div>
+              <div class="muted" style="font-size:12.2px">Turmas afetadas</div>
+              <div class="strong">2 &middot; AUT-3A e MTR-2A</div>
+              <div class="muted" style="font-size:12.2px;margin-top:9px">Realocação sugerida</div>
+              <div class="strong">SA-02 e SA-04 &middot; livres no horário</div>
+            </div>
+            <div>
+              <div class="muted" style="font-size:12.2px">Impacto na carga</div>
+              <div class="strong">Nenhum &middot; aulas teóricas</div>
+              <div class="muted" style="font-size:12.2px;margin-top:9px">Retorno institucional</div>
+              <div class="strong">Alto &middot; captação de novos convênios</div>
+            </div>
+          </div>
+        </div>
+        <div class="card__foot" style="gap:8px">
+          <span class="muted">Nenhuma aula prática é afetada.</span>
+          <div style="margin-left:auto;display:flex;gap:8px">
+            <button class="btn" data-toast="Solicitação recusada" data-toast-detalhe="O motivo foi enviado ao docente.">Recusar</button>
+            <button class="btn btn--primary" data-toast="Cessão aprovada" data-toast-detalhe="AUT-3A e MTR-2A foram para SA-02 e SA-04.">Aprovar e realocar turmas</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__head"><h3>Decisões recentes</h3></div>
+        <div class="card__body--flush">
+          <div class="table-wrap">
+            <table class="tb">
+              <thead><tr><th>#</th><th>Caso</th><th>Ambiente</th><th>Data</th><th>Decisão</th><th>Justificativa</th><th>Quem decidiu</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td class="mono">#30</td><td class="strong">Treinamento NR-10</td><td>Oficina Elétrica Predial</td><td class="mono">20/08</td>
+                  <td><span class="badge badge--ok">Aprovado</span></td>
+                  <td class="muted">P5 sem aula regular no ambiente</td>
+                  <td>Didi Barbosa</td>
+                </tr>
+                <tr>
+                  <td class="mono">#29</td><td class="strong">Palestra de integração</td><td>Auditório</td><td class="mono">20/08</td>
+                  <td><span class="badge badge--ok">Aprovado</span></td>
+                  <td class="muted">Atividade institucional prevista no calendário</td>
+                  <td>Didi Barbosa</td>
+                </tr>
+                <tr>
+                  <td class="mono">#28</td><td class="strong">Uso do Lab. de Comando por curso FIC</td><td>Lab. de Comando Elétrico</td><td class="mono">12/08</td>
+                  <td><span class="badge badge--danger">Recusado</span></td>
+                  <td class="muted">Ambiente saturado com turmas regulares</td>
+                  <td>Didi Barbosa</td>
+                </tr>
+                <tr>
+                  <td class="mono">#27</td><td class="strong">Visita técnica de escola parceira</td><td>Oficina de Usinagem</td><td class="mono">05/08</td>
+                  <td><span class="badge badge--warn">Aprovado com ressalva</span></td>
+                  <td class="muted">Somente P5, sem deslocar aula prática</td>
+                  <td>Didi Barbosa</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/icones.js"></script>
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

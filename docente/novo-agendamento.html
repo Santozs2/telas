@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Novo Agendamento</title>
+<link rel="stylesheet" href="../assets/css/sipae.css">
+</head>
+<body data-role="docente" data-page="novo" data-title="Novo Agendamento" data-crumb="Operação">
+
+<div class="app">
+  <div id="sidebar-slot"></div>
+  <div class="main">
+    <div id="topbar-slot"></div>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h1>Novo agendamento</h1>
+          <p class="sub">A solicitação é validada contra o seu plano de curso, a capacidade do ambiente e o seu saldo de horas.</p>
+        </div>
+        <div class="page-head__actions">
+          <a class="btn" href="meus-agendamentos.html">Cancelar</a>
+          <button class="btn">Salvar rascunho</button>
+          <button class="btn btn--primary" data-toast="Solicitação enviada" data-toast-detalhe="Aguardando análise da coordenação.">Enviar solicitação</button>
+        </div>
+      </div>
+
+      <div class="grid g-2-1" style="align-items:start">
+
+        <div class="stack">
+
+          <!-- 1. O que será dado -->
+          <div class="card">
+            <div class="card__head">
+              <h3>1. O que será dado</h3>
+              <span class="sub">Origem: plano de curso vigente</span>
+            </div>
+            <div class="card__body">
+              <div class="form-grid">
+
+                <div class="field">
+                  <label>Curso <span class="req">*</span></label>
+                  <select class="select">
+                    <option>CAI &middot; Aprendizagem Industrial - Mecânica</option>
+                    <option>CAI &middot; Aprendizagem Industrial - Eletroeletrônica</option>
+                    <option>CT &middot; Técnico em Automação Industrial</option>
+                  </select>
+                  <span class="hint">Matriz horária CAI: aula de 50 min, intervalo de 20 min.</span>
+                </div>
+
+                <div class="field">
+                  <label>Turma <span class="req">*</span></label>
+                  <select class="select" id="sel-turma">
+                    <option data-alunos="28">MEC-2A &middot; 28 alunos</option>
+                    <option data-alunos="30">MEC-2B &middot; 30 alunos</option>
+                    <option data-alunos="24">MEC-1A &middot; 24 alunos</option>
+                  </select>
+                  <span class="hint">Somente turmas vinculadas a você.</span>
+                </div>
+
+                <div class="field field--full">
+                  <label>Unidade curricular <span class="req">*</span></label>
+                  <select class="select" id="sel-uc">
+                    <option data-tipo="lab" data-saldo="36">Comandos Elétricos &middot; 60h &middot; saldo 36h</option>
+                    <option data-tipo="lab" data-saldo="37">Projetos Integradores &middot; 45h &middot; saldo 37h</option>
+                    <option data-tipo="sala" data-saldo="10">Desenho Técnico &middot; 40h &middot; saldo 10h</option>
+                    <option data-tipo="lab" data-saldo="18">Metrologia &middot; 30h &middot; saldo 18h</option>
+                  </select>
+                  <span class="hint hint--lock"><span><i data-ico="cadeado"></i></span> A UC determina quais ambientes ficam liberados para seleção. Você não escolhe a sala livremente.</span>
+                </div>
+
+                <div class="field">
+                  <label>Docente auxiliar</label>
+                  <select class="select">
+                    <option>Nenhum</option>
+                    <option selected>Bruno Alves &middot; auxiliar</option>
+                    <option>Marcos Prado &middot; auxiliar</option>
+                  </select>
+                  <span class="hint">Obrigatório quando a turma é dividida em dois grupos simultâneos.</span>
+                </div>
+
+                <div class="field">
+                  <label>Natureza da aula <span class="req">*</span></label>
+                  <select class="select">
+                    <option>Prática &middot; laboratório/oficina</option>
+                    <option>Teórica &middot; sala de aula</option>
+                    <option>Mista &middot; teórica com demonstração</option>
+                  </select>
+                  <span class="hint">Aula teórica não ocupa ambiente prático.</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Quando -->
+          <div class="card">
+            <div class="card__head">
+              <h3>2. Quando</h3>
+              <span class="sub">Planejamento semestral, mensal ou semanal</span>
+            </div>
+            <div class="card__body">
+
+              <div class="field" style="margin-bottom:16px">
+                <label>Tipo de planejamento <span class="req">*</span></label>
+                <div class="radio-cards" id="rc-plan">
+                  <div class="rc" data-value="unica"><div class="ic"><i data-ico="calendario"></i></div><div class="tt">Aula única</div><div class="dd">Uma data específica</div></div>
+                  <div class="rc is-on" data-value="semanal"><div class="ic"><i data-ico="repetir"></i></div><div class="tt">Semanal</div><div class="dd">Repete no mesmo dia e período</div></div>
+                  <div class="rc" data-value="mensal"><div class="ic"><i data-ico="calendario"></i></div><div class="tt">Mensal</div><div class="dd">Todo o mês, com antecedência</div></div>
+                  <div class="rc" data-value="semestral"><div class="ic"><i data-ico="grafico"></i></div><div class="tt">Semestral</div><div class="dd">Toda a carga da UC</div></div>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label>Início <span class="req">*</span></label>
+                  <input class="input" type="date" value="2026-08-24">
+                </div>
+                <div class="field">
+                  <label>Fim da repetição</label>
+                  <input class="input" type="date" value="2026-09-28">
+                </div>
+
+                <div class="field field--full">
+                  <label>Dias da semana <span class="req">*</span></label>
+                  <div class="pill-filter">
+                    <span class="pill">Seg</span>
+                    <span class="pill is-on">Ter</span>
+                    <span class="pill">Qua</span>
+                    <span class="pill">Qui</span>
+                    <span class="pill">Sex</span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label>Turno <span class="req">*</span></label>
+                  <select class="select"><option>Manhã</option><option>Tarde</option></select>
+                </div>
+
+                <div class="field">
+                  <label>Períodos <span class="req">*</span></label>
+                  <div class="pill-filter" style="padding-top:5px">
+                    <span class="pill">P1 07:30</span>
+                    <span class="pill">P2 08:20</span>
+                    <span class="pill is-on">P3 09:10</span>
+                    <span class="pill is-on">P4 10:20</span>
+                    <span class="pill">P5 11:10</span>
+                  </div>
+                  <span class="hint">2 períodos selecionados = 1h40 de carga consumida.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 3. Onde -->
+          <div class="card">
+            <div class="card__head">
+              <h3>3. Onde</h3>
+              <span class="sub">Ambientes compatíveis com a UC selecionada</span>
+            </div>
+            <div class="card__body">
+
+              <div class="radio-cards" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr))">
+                <div class="rc is-on">
+                  <div class="row row--between"><span class="ic"><i data-ico="lab"></i></span><span class="prio prio--1"><span class="n">1</span></span></div>
+                  <div class="tt">Lab. de Comando Elétrico</div>
+                  <div class="dd">16 lugares &middot; Bloco C</div>
+                  <div style="margin-top:7px"><span class="badge badge--warn">Disputado em P2 e P3</span></div>
+                </div>
+                <div class="rc">
+                  <div class="row row--between"><span class="ic"><i data-ico="lab"></i></span><span class="prio prio--2"><span class="n">2</span></span></div>
+                  <div class="tt">Lab. de Metrologia</div>
+                  <div class="dd">16 lugares &middot; Bloco C</div>
+                  <div style="margin-top:7px"><span class="badge badge--ok">Livre nos dois períodos</span></div>
+                </div>
+                <div class="rc">
+                  <div class="row row--between"><span class="ic"><i data-ico="oficina"></i></span><span class="prio prio--3"><span class="n">3</span></span></div>
+                  <div class="tt">Oficina Elétrica Predial</div>
+                  <div class="dd">16 lugares &middot; Bloco C</div>
+                  <div style="margin-top:7px"><span class="badge badge--muted">Alternativa terciária</span></div>
+                </div>
+              </div>
+
+              <div class="alert alert--info" style="margin-top:16px">
+                <span class="alert__ic"><i data-ico="docentes"></i></span>
+                <div>
+                  <div class="alert__tt">Turma de 28 alunos em ambiente de 16 lugares</div>
+                  <div>O sistema dividirá automaticamente em <b>2 grupos de 14</b>. Escolha como conduzir:</div>
+                  <div class="row" style="margin-top:10px">
+                    <label class="check is-on" style="background:var(--card)">
+                      <input type="checkbox" checked>
+                      <span><span class="tt">Grupos em períodos diferentes</span><span class="dd">G1 em P3, G2 em P4 &mdash; mesmo ambiente, você sozinho</span></span>
+                    </label>
+                    <label class="check" style="background:var(--card)">
+                      <input type="checkbox">
+                      <span><span class="tt">Grupos simultâneos</span><span class="dd">G1 com você e G2 com o docente auxiliar em outro ambiente</span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 4. Justificativa -->
+          <div class="card">
+            <div class="card__head"><h3>4. Descrição e motivo</h3></div>
+            <div class="card__body">
+              <div class="form-grid">
+                <div class="field field--full">
+                  <label>Descrição da atividade <span class="req">*</span></label>
+                  <textarea class="textarea" placeholder="Ex.: Montagem de partida direta com reversão em bancada didática.">Montagem e ensaio de circuitos de comando com contatores - prática obrigatória prevista no plano de curso.</textarea>
+                </div>
+                <div class="field field--full">
+                  <label>Justificativa de prioridade</label>
+                  <textarea class="textarea" style="min-height:64px" placeholder="Usada pela coordenação como critério de desempate em caso de disputa.">O Lab. de Comando é ambiente principal da UC; a atividade não pode ser executada em sala de aula.</textarea>
+                  <span class="hint">Este texto é exibido à coordenação quando houver mais de um pedido para o mesmo ambiente e horário.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Resumo lateral -->
+        <div class="stack" style="position:sticky;top:78px">
+
+          <div class="card">
+            <div class="card__head"><h3>Resumo da solicitação</h3></div>
+            <div class="card__body">
+              <dl class="dl">
+                <dt>UC</dt><dd>Comandos Elétricos</dd>
+                <dt>Turma</dt><dd>MEC-2A &middot; 28 alunos</dd>
+                <dt>Ambiente</dt><dd>Lab. de Comando Elétrico</dd>
+                <dt>Divisão</dt><dd>2 grupos de 14</dd>
+                <dt>Quando</dt><dd>Terças, P3 e P4</dd>
+                <dt>Vigência</dt><dd>24/08 a 28/09/2026</dd>
+                <dt>Ocorrências</dt><dd>6 aulas &middot; 10h</dd>
+              </dl>
+            </div>
+            <div class="card__foot" style="justify-content:space-between">
+              <span>Saldo após aprovação</span>
+              <span class="strong">26h de 60h</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__head"><h3>Validações do sistema</h3></div>
+            <div class="list">
+              <div class="list__item">
+                <div class="list__ico i-ok"><i data-ico="check"></i></div>
+                <div class="list__bd">
+                  <div class="list__tt">Ambiente compatível com a UC</div>
+                  <div class="list__ds">Lab. de Comando é ambiente principal de Comandos Elétricos.</div>
+                </div>
+              </div>
+              <div class="list__item">
+                <div class="list__ico i-ok"><i data-ico="check"></i></div>
+                <div class="list__bd">
+                  <div class="list__tt">Um ambiente por período</div>
+                  <div class="list__ds">Você não possui outra reserva em P3 e P4 das terças.</div>
+                </div>
+              </div>
+              <div class="list__item">
+                <div class="list__ico i-ok"><i data-ico="check"></i></div>
+                <div class="list__bd">
+                  <div class="list__tt">Capacidade respeitada</div>
+                  <div class="list__ds">14 alunos por grupo &middot; limite de 16 em laboratório.</div>
+                </div>
+              </div>
+              <div class="list__item">
+                <div class="list__ico i-warn"><i data-ico="alerta"></i></div>
+                <div class="list__bd">
+                  <div class="list__tt">Concorrência detectada</div>
+                  <div class="list__ds">Rafael Lima solicitou o mesmo ambiente em P3 de 25/08. A coordenação decidirá pelo critério de prioridade.</div>
+                </div>
+              </div>
+              <div class="list__item">
+                <div class="list__ico i-ok"><i data-ico="check"></i></div>
+                <div class="list__bd">
+                  <div class="list__tt">Dentro da janela de agendamento</div>
+                  <div class="list__ds">Setembro abre em 24/08; agosto segue aberto para ajustes.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn--primary btn--block" data-toast="Solicitação enviada" data-toast-detalhe="Aguardando análise da coordenação.">Enviar solicitação</button>
+          <p class="hint" style="justify-content:center">Aulas em ambiente principal sem concorrência são aprovadas automaticamente.</p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/icones.js"></script>
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

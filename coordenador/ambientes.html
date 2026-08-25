@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Ambientes</title>
+<link rel="stylesheet" href="../assets/css/sipae.css">
+</head>
+<body data-role="coordenador" data-page="ambientes" data-title="Ambientes de Ensino" data-crumb="Gestão">
+
+<div class="app">
+  <div id="sidebar-slot"></div>
+  <div class="main">
+    <div id="topbar-slot"></div>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h1>Ambientes de ensino</h1>
+          <p class="sub">Cadastro de salas de aula, laboratórios, oficinas e auditório &mdash; capacidade, recursos e bloqueios.</p>
+        </div>
+        <div class="page-head__actions">
+          <button class="btn"><i data-ico="baixar"></i> Exportar</button>
+          <button class="btn btn--primary"><i data-ico="mais"></i> Novo ambiente</button>
+        </div>
+      </div>
+
+      <div class="grid g-5" style="margin-bottom:18px">
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-info"><i data-ico="predio"></i></div><div class="kpi__lb">Total</div></div>
+          <div class="kpi__vl">14</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-muted"><i data-ico="curso"></i></div><div class="kpi__lb">Salas de aula</div></div>
+          <div class="kpi__vl">4</div>
+          <div class="kpi__ft">32 a 40 lugares</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-purple"><i data-ico="lab"></i></div><div class="kpi__lb">Laboratórios</div></div>
+          <div class="kpi__vl">5</div>
+          <div class="kpi__ft">limite de 16 por docente</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-warn"><i data-ico="oficina"></i></div><div class="kpi__lb">Oficinas</div></div>
+          <div class="kpi__vl">3</div>
+          <div class="kpi__ft">limite de 16 por docente</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-danger"><i data-ico="cadeado"></i></div><div class="kpi__lb">Bloqueados</div></div>
+          <div class="kpi__vl">1</div>
+          <div class="kpi__ft">manutenção preventiva</div>
+        </div>
+      </div>
+
+      <div class="grid g-3-2" style="align-items:start">
+
+        <div class="card">
+          <div class="card__head">
+            <h3>Cadastro de ambientes</h3>
+            <div class="right">
+              <label class="search" style="width:210px"><span><i data-ico="busca"></i></span><input placeholder="Buscar ambiente"></label>
+              <select class="select" style="width:auto"><option>Todos os blocos</option><option>Bloco A</option><option>Bloco B</option><option>Bloco C</option><option>Bloco D</option></select>
+            </div>
+          </div>
+          <div class="card__body--flush">
+            <div class="table-wrap">
+              <table class="tb">
+                <thead>
+                  <tr><th>Código</th><th>Ambiente</th><th>Tipo</th><th class="num">Capacidade</th><th>Recursos</th><th>Ocupação hoje</th><th>Situação</th><th class="actions">Ações</th></tr>
+                </thead>
+                <tbody id="tb-ambientes"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card__foot">
+            <span class="muted">14 ambientes cadastrados</span>
+            <div class="pagination"><button>&lsaquo;</button><button class="is-on">1</button><button>2</button><button>&rsaquo;</button></div>
+          </div>
+        </div>
+
+        <div class="stack">
+
+          <!-- Formulário de cadastro -->
+          <div class="card">
+            <div class="card__head"><h3>Editar ambiente</h3><div class="right"><span class="badge badge--info">LAB-CMD</span></div></div>
+            <div class="card__body">
+              <div class="form-grid" style="grid-template-columns:1fr 1fr">
+                <div class="field field--full">
+                  <label>Nome <span class="req">*</span></label>
+                  <input class="input" value="Lab. de Comando Elétrico">
+                </div>
+                <div class="field">
+                  <label>Tipo <span class="req">*</span></label>
+                  <select class="select">
+                    <option>Laboratório</option><option>Sala de aula</option><option>Oficina</option>
+                    <option>Auditório</option><option>Sala de preparo</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Bloco</label>
+                  <select class="select"><option>Bloco C</option><option>Bloco A</option><option>Bloco B</option><option>Bloco D</option></select>
+                </div>
+                <div class="field">
+                  <label>Capacidade total <span class="req">*</span></label>
+                  <input class="input" type="number" value="16">
+                </div>
+                <div class="field">
+                  <label>Limite por docente <span class="req">*</span></label>
+                  <input class="input" type="number" value="16">
+                  <span class="hint">Regra: 16 em laboratório/oficina, 32 a 40 em sala de aula.</span>
+                </div>
+                <div class="field field--full">
+                  <label>Recursos disponíveis</label>
+                  <div class="pill-filter">
+                    <span class="pill is-on">Bancadas didáticas</span>
+                    <span class="pill is-on">Projetor</span>
+                    <span class="pill is-on">Rede elétrica trifásica</span>
+                    <span class="pill">Ar comprimido</span>
+                    <span class="pill">Computadores</span>
+                  </div>
+                </div>
+                <div class="field field--full">
+                  <label>Observações</label>
+                  <textarea class="textarea" style="min-height:60px">Ambiente principal das UCs de Comandos Elétricos e Automação Predial.</textarea>
+                </div>
+              </div>
+              <div class="row" style="margin-top:14px">
+                <button class="btn btn--primary" data-toast="Alterações salvas" data-toast-detalhe="">Salvar alterações</button>
+                <button class="btn">Cancelar</button>
+                <button class="btn btn--danger" style="margin-left:auto">Excluir</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__head"><h3>Bloqueio de ambiente</h3></div>
+            <div class="card__body">
+              <p class="muted" style="font-size:12.6px;margin-bottom:12px">
+                Bloquear retira o ambiente da agenda no intervalo informado e realoca automaticamente as aulas afetadas.
+              </p>
+              <div class="form-grid" style="grid-template-columns:1fr 1fr">
+                <div class="field"><label>Início</label><input class="input" type="date" value="2026-08-20"></div>
+                <div class="field"><label>Fim</label><input class="input" type="date" value="2026-08-20"></div>
+                <div class="field field--full">
+                  <label>Motivo</label>
+                  <select class="select"><option>Manutenção preventiva</option><option>Manutenção corretiva</option><option>Evento institucional</option><option>Reforma</option></select>
+                </div>
+              </div>
+              <div class="alert alert--warn" style="margin-top:12px">
+                <span class="alert__ic"><i data-ico="alerta"></i></span>
+                <div><b>2 aulas</b> serão afetadas no Lab. de Usinagem CNC. O sistema sugerirá a Oficina de Usinagem como alternativa.</div>
+              </div>
+              <button class="btn btn--danger btn--block" style="margin-top:12px">Bloquear ambiente</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/icones.js"></script>
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/shell.js"></script>
+<script>
+  (function listarAmbientes() {
+    const recursos = {
+      'SA-01':'Projetor, quadro', 'SA-02':'Projetor, quadro', 'SA-03':'Projetor', 'SA-04':'Quadro',
+      'LAB-CMD':'Bancadas, trifásica', 'LAB-PNE':'Ar comprimido, bancadas', 'LAB-MET':'Instrumentos de medição',
+      'LAB-INF':'20 computadores', 'LAB-CNC':'2 centros de usinagem', 'OF-USI':'Tornos, fresadoras',
+      'OF-SOL':'8 cabines de solda', 'OF-ELE':'Bancadas prediais', 'AUD-01':'Som, projeção', 'SP-01':'Bancada de preparo'
+    };
+    const ocupacaoPct = {
+      'SA-01':80,'SA-02':40,'SA-03':60,'SA-04':40,'LAB-CMD':100,'LAB-PNE':60,'LAB-MET':60,
+      'LAB-INF':40,'LAB-CNC':20,'OF-USI':60,'OF-SOL':60,'OF-ELE':40,'AUD-01':40,'SP-01':20
+    };
+    const corpo = document.getElementById('tb-ambientes');
+    corpo.innerHTML = AMBIENTES.map(a => {
+      const pct = ocupacaoPct[a.id];
+      const bloqueado = a.id === 'LAB-CNC';
+      const cor = pct >= 90 ? 'f-danger' : pct >= 60 ? 'f-warn' : 'f-brand';
+      return `<tr>
+        <td class="mono">${a.id}</td>
+        <td class="strong">${a.nome}<div class="muted" style="font-size:11.4px">${a.bloco}</div></td>
+        <td><span class="tag">${a.tipo}</span></td>
+        <td class="num">${a.cap}</td>
+        <td class="muted" style="font-size:12px">${recursos[a.id] || '-'}</td>
+        <td style="min-width:120px">
+          <div class="meter"><span class="${cor}" style="width:${pct}%"></span></div>
+          <div class="muted" style="font-size:11.2px;margin-top:3px">${pct}% dos períodos</div>
+        </td>
+        <td>${bloqueado
+          ? '<span class="badge badge--danger">Bloqueado</span>'
+          : '<span class="badge badge--ok"><span class="bullet"></span> Ativo</span>'}</td>
+        <td class="actions">
+          <button class="btn btn--sm">Editar</button>
+          <button class="btn btn--sm">${bloqueado ? 'Desbloquear' : 'Bloquear'}</button>
+        </td>
+      </tr>`;
+    }).join('');
+  })();
+</script>
+</body>
+</html>

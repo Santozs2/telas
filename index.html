@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Protótipo de Telas</title>
+<link rel="stylesheet" href="assets/css/sipae.css">
+</head>
+<body>
+
+<div class="picker">
+  <div class="picker__in">
+    <div class="picker__mark">SIP</div>
+    <h1>SIPAE &middot; Mapa de Salas</h1>
+    <p class="sub">
+      Sistema de gestão, alocação e otimização dinâmica de ambientes de ensino.<br>
+      Protótipo de telas &mdash; escolha o perfil para navegar pelo sistema.
+    </p>
+
+    <div class="picker__grid">
+
+      <a class="pcard" href="docente/dashboard.html">
+        <div class="pcard__ic" style="background:rgba(10,92,173,.24);color:#7cbdf5"><i data-ico="docente"></i></div>
+        <h3>Docente</h3>
+        <div class="rel">Relação 1x1 &middot; escopo próprio</div>
+        <p>Consulta o mapa de salas, solicita agendamento conforme o plano de curso e acompanha o saldo de horas das suas UCs.</p>
+        <ul>
+          <li>Mapa de salas em tempo real</li>
+          <li>Novo agendamento (com validações)</li>
+          <li>Meus agendamentos e faltas</li>
+          <li>Plano de curso e extrato de horas</li>
+        </ul>
+        <div class="go">Entrar como docente &rarr;</div>
+      </a>
+
+      <a class="pcard" href="coordenador/dashboard.html">
+        <div class="pcard__ic" style="background:rgba(93,63,176,.28);color:#bda6f2"><i data-ico="prancheta"></i></div>
+        <h3>Coordenador</h3>
+        <div class="rel">Relação Nx1 &middot; controle do eixo</div>
+        <p>Enxerga todos os ambientes e docentes, aprova solicitações, resolve conflitos por critério de desempate e remaneja alocações.</p>
+        <ul>
+          <li>Mapa geral e remanejamento</li>
+          <li>Fila de solicitações e conflitos</li>
+          <li>Presença e localização dos docentes</li>
+          <li>CRUD de ambientes, cursos e UCs</li>
+        </ul>
+        <div class="go">Entrar como coordenador &rarr;</div>
+      </a>
+
+      <a class="pcard" href="diretor/dashboard.html">
+        <div class="pcard__ic" style="background:rgba(11,112,72,.28);color:#63c99b"><i data-ico="predio"></i></div>
+        <h3>Diretor</h3>
+        <div class="rel">Visão institucional &middot; leitura e governança</div>
+        <p>Acompanha indicadores de ocupação da infraestrutura, aprova exceções, audita alterações e administra usuários e perfis.</p>
+        <ul>
+          <li>Painel executivo com KPIs</li>
+          <li>Ocupação por tipo de ambiente</li>
+          <li>Aprovações de exceção</li>
+          <li>Auditoria e gestão de acessos</li>
+        </ul>
+        <div class="go">Entrar como diretor &rarr;</div>
+      </a>
+
+    </div>
+
+    <p class="picker__foot">
+      Telas de login e autenticação não fazem parte desta entrega &mdash; esta página existe apenas para navegar entre os três perfis do protótipo.
+    </p>
+  </div>
+</div>
+
+<script src="assets/js/icones.js"></script>
+<script>document.addEventListener("DOMContentLoaded",()=>aplicarIcones());</script>
+</body>
+</html>

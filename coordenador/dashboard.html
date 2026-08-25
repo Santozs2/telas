@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Painel da Coordenação</title>
+<link rel="stylesheet" href="../assets/css/sipae.css">
+</head>
+<body data-role="coordenador" data-page="dashboard" data-title="Painel da Coordenação" data-crumb="Início">
+
+<div class="app">
+  <div id="sidebar-slot"></div>
+  <div class="main">
+    <div id="topbar-slot"></div>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h1>Painel da coordenação</h1>
+          <p class="sub">Eixo Industrial &middot; quinta-feira, 20/08/2026 &middot; 14 ambientes, 25 docentes e 13 turmas sob sua gestão.</p>
+        </div>
+        <div class="page-head__actions">
+          <a class="btn" href="mapa-geral.html"><i data-ico="mapa"></i> Mapa geral</a>
+          <a class="btn btn--primary" href="solicitacoes.html">Analisar solicitações (7)</a>
+        </div>
+      </div>
+
+      <div class="grid g-5">
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-info">&#128200;</div><div class="kpi__lb">Ocupação agora</div></div>
+          <div class="kpi__vl">68<small>%</small></div>
+          <div class="kpi__ft">9 de 14 ambientes em uso</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-warn"><i data-ico="sino"></i></div><div class="kpi__lb">Solicitações pendentes</div></div>
+          <div class="kpi__vl">7</div>
+          <div class="kpi__ft">2 vencem hoje</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-danger"><i data-ico="alerta"></i></div><div class="kpi__lb">Conflitos abertos</div></div>
+          <div class="kpi__vl">3</div>
+          <div class="kpi__ft">todos em laboratório</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-ok"><i data-ico="docente"></i></div><div class="kpi__lb">Docentes presentes</div></div>
+          <div class="kpi__vl">22<small>/25</small></div>
+          <div class="kpi__ft">2 faltas &middot; 1 afastamento</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-purple"><i data-ico="caixa"></i></div><div class="kpi__lb">Salas liberadas hoje</div></div>
+          <div class="kpi__vl">4</div>
+          <div class="kpi__ft">por falta ou cancelamento</div>
+        </div>
+      </div>
+
+      <div class="grid g-2-1" style="margin-top:16px;align-items:start">
+
+        <div class="stack">
+
+          <!-- Conflitos -->
+          <div class="card">
+            <div class="card__head">
+              <h3>Conflitos aguardando desempate</h3>
+              <span class="sub">Critério: prioridade da UC sobre o ambiente</span>
+              <div class="right"><a class="btn btn--sm" href="conflitos.html">Ver todos</a></div>
+            </div>
+            <div class="list">
+
+              <div class="list__item">
+                <div class="list__ico i-danger"><i data-ico="alerta"></i></div>
+                <div class="list__bd">
+                  <div class="list__tt">Lab. de Comando Elétrico &middot; 25/08 &middot; P2 e P3</div>
+                  <div class="list__ds">
+                    <b>Edvaldo Ramos</b> (Comandos Elétricos &middot; <span class="prio prio--1"><span class="n">1</span> principal</span>)
+                    &nbsp;versus&nbsp;
+                    <b>Rafael Lima</b> (Instalações Prediais &middot; <span class="prio prio--3"><span class="n">3</span> terciário</span>)
+                  </div>
+                  <div class="list__mt">Solicitado há 20 minutos &middot; 2 turmas afetadas</div>
+                </div>
+                <div class="list__rt">
+                  <a class="btn btn--sm" href="conflitos.html">Analisar</a>
+                  <button class="btn btn--sm btn--ok" data-toast="Critério de desempate aplicado" data-toast-detalhe="Prioridade da UC sobre o ambiente.">Aplicar critério</button>
+                </div>
+              </div>
+
+              <div class="list__item">
+                <div class="list__ico i-danger"><i data-ico="alerta"></i></div>
+                <div class="list__bd">
+                  <div class="list__tt">Lab. de Pneumática &middot; 26/08 &middot; P4</div>
+                  <div class="list__ds">
+                    <b>Saran Oliveira</b> (Pneumática e Hidráulica &middot; <span class="prio prio--1"><span class="n">1</span> principal</span>)
+                    &nbsp;versus&nbsp;
+                    <b>Juliana Reis</b> (Projetos &middot; <span class="prio prio--2"><span class="n">2</span> secundário</span>)
+                  </div>
+                  <div class="list__mt">Solicitado ontem &middot; 2 turmas afetadas</div>
+                </div>
+                <div class="list__rt">
+                  <a class="btn btn--sm" href="conflitos.html">Analisar</a>
+                  <button class="btn btn--sm btn--ok" data-toast="Critério de desempate aplicado" data-toast-detalhe="Prioridade da UC sobre o ambiente.">Aplicar critério</button>
+                </div>
+              </div>
+
+              <div class="list__item">
+                <div class="list__ico i-warn"><i data-ico="alerta"></i></div>
+                <div class="list__bd">
+                  <div class="list__tt">Oficina de Usinagem &middot; 27/08 &middot; P1 a P3</div>
+                  <div class="list__ds">
+                    <b>Marcos Prado</b> (Processos de Usinagem &middot; <span class="prio prio--1"><span class="n">1</span> principal</span>)
+                    &nbsp;versus&nbsp;
+                    <b>treinamento in company</b> (empresa parceira)
+                  </div>
+                  <div class="list__mt">Requer decisão da direção &middot; receita externa envolvida</div>
+                </div>
+                <div class="list__rt">
+                  <a class="btn btn--sm" href="conflitos.html">Analisar</a>
+                  <button class="btn btn--sm">Encaminhar à direção</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Solicitações recentes -->
+          <div class="card">
+            <div class="card__head">
+              <h3>Últimas solicitações</h3>
+              <div class="right"><a class="btn btn--sm" href="solicitacoes.html">Fila completa</a></div>
+            </div>
+            <div class="card__body--flush">
+              <div class="table-wrap">
+                <table class="tb">
+                  <thead><tr><th>Docente</th><th>UC / turma</th><th>Ambiente</th><th>Quando</th><th>Compatibilidade</th><th class="actions">Ação</th></tr></thead>
+                  <tbody>
+                    <tr>
+                      <td><div class="cell-user"><div class="avatar avatar--sm">ER</div><div><div class="nm">Edvaldo Ramos</div><div class="sb">Mecânica</div></div></div></td>
+                      <td>Comandos Elétricos<div class="muted" style="font-size:11.4px">MEC-2A (G1)</div></td>
+                      <td>Lab. de Comando</td>
+                      <td class="mono">25/08 &middot; P3</td>
+                      <td><span class="badge badge--ok"><span class="bullet"></span> Ambiente principal</span></td>
+                      <td class="actions"><button class="btn btn--sm btn--ok" data-toast="Solicitação aprovada" data-toast-detalhe="Docente e turma foram notificados.">Aprovar</button></td>
+                    </tr>
+                    <tr>
+                      <td><div class="cell-user"><div class="avatar avatar--sm">BA</div><div><div class="nm">Bruno Alves</div><div class="sb">Soldagem</div></div></div></td>
+                      <td>Soldagem MIG/MAG<div class="muted" style="font-size:11.4px">MEC-1B (G1)</div></td>
+                      <td>Oficina de Soldagem</td>
+                      <td class="mono">20/08 &middot; P2</td>
+                      <td><span class="badge badge--ok"><span class="bullet"></span> Ambiente principal</span></td>
+                      <td class="actions"><button class="btn btn--sm btn--ok" data-toast="Solicitação aprovada" data-toast-detalhe="Docente e turma foram notificados.">Aprovar</button></td>
+                    </tr>
+                    <tr>
+                      <td><div class="cell-user"><div class="avatar avatar--sm">JR</div><div><div class="nm">Juliana Reis</div><div class="sb">Automação</div></div></div></td>
+                      <td>Projetos<div class="muted" style="font-size:11.4px">AUT-3A</div></td>
+                      <td>Lab. de Pneumática</td>
+                      <td class="mono">26/08 &middot; P4</td>
+                      <td><span class="badge badge--warn">Ambiente secundário</span></td>
+                      <td class="actions"><button class="btn btn--sm">Analisar</button></td>
+                    </tr>
+                    <tr>
+                      <td><div class="cell-user"><div class="avatar avatar--sm">RL</div><div><div class="nm">Rafael Lima</div><div class="sb">Eletroeletrônica</div></div></div></td>
+                      <td>Instalações Prediais<div class="muted" style="font-size:11.4px">ELE-1A (G2)</div></td>
+                      <td>Lab. de Comando</td>
+                      <td class="mono">25/08 &middot; P3</td>
+                      <td><span class="badge badge--danger">Fora do plano de curso</span></td>
+                      <td class="actions"><button class="btn btn--sm btn--danger" data-toast="Solicitação recusada" data-toast-detalhe="O motivo foi enviado ao docente.">Recusar</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="stack">
+
+          <!-- Presença -->
+          <div class="card">
+            <div class="card__head">
+              <h3>Onde estão os docentes</h3>
+              <span class="sub">P3 &middot; 09:10</span>
+              <div class="right"><a class="btn btn--sm" href="docentes.html">Detalhar</a></div>
+            </div>
+            <div class="list scroll-y">
+              <div class="list__item">
+                <div class="list__ico i-ok">ER</div>
+                <div class="list__bd"><div class="list__tt">Edvaldo Ramos</div><div class="list__ds">Lab. de Comando &middot; MEC-2A (G1)</div></div>
+                <div class="list__rt"><span class="badge badge--ok"><span class="bullet"></span> Em aula</span></div>
+              </div>
+              <div class="list__item">
+                <div class="list__ico i-ok">MP</div>
+                <div class="list__bd"><div class="list__tt">Marcos Prado</div><div class="list__ds">Oficina de Usinagem &middot; MEC-2B (G2)</div></div>
+                <div class="list__rt"><span class="badge badge--ok"><span class="bullet"></span> Em aula</span></div>
+              </div>
+              <div class="list__item">
+                <div class="list__ico i-ok">JR</div>
+                <div class="list__bd"><div class="list__tt">Juliana Reis</div><div class="list__ds">Lab. de Informática &middot; AUT-1A</div></div>
+                <div class="list__rt"><span class="badge badge--ok"><span class="bullet"></span> Em aula</span></div>
+              </div>
+              <div class="list__item">
+                <div class="list__ico i-muted">PN</div>
+                <div class="list__bd"><div class="list__tt">Paulo Nunes</div><div class="list__ds">Sem aula neste período</div></div>
+                <div class="list__rt"><span class="badge badge--muted">Livre</span></div>
+              </div>
+              <div class="list__item">
+                <div class="list__ico i-danger">CM</div>
+                <div class="list__bd"><div class="list__tt">Carla Mendes</div><div class="list__ds">Falta registrada &middot; SA-01 liberada em P4 e P5</div></div>
+                <div class="list__rt"><span class="badge badge--danger">Faltou</span></div>
+              </div>
+              <div class="list__item">
+                <div class="list__ico i-warn">BA</div>
+                <div class="list__bd"><div class="list__tt">Bruno Alves</div><div class="list__ds">Auxiliar no Lab. de Comando</div></div>
+                <div class="list__rt"><span class="badge badge--warn">Auxiliar</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ocupação por tipo -->
+          <div class="card">
+            <div class="card__head"><h3>Ocupação por tipo de ambiente</h3><span class="sub">Hoje &middot; manhã</span></div>
+            <div class="card__body">
+              <div class="bars">
+                <div class="bar-row">
+                  <div class="top"><span class="l">Laboratórios</span><span class="r">72%</span></div>
+                  <div class="meter"><span class="f-danger" style="width:72%"></span></div>
+                </div>
+                <div class="bar-row">
+                  <div class="top"><span class="l">Salas de aula</span><span class="r">55%</span></div>
+                  <div class="meter"><span class="f-brand" style="width:55%"></span></div>
+                </div>
+                <div class="bar-row">
+                  <div class="top"><span class="l">Oficinas</span><span class="r">53%</span></div>
+                  <div class="meter"><span class="f-warn" style="width:53%"></span></div>
+                </div>
+                <div class="bar-row">
+                  <div class="top"><span class="l">Auditório</span><span class="r">40%</span></div>
+                  <div class="meter"><span class="f-ok" style="width:40%"></span></div>
+                </div>
+              </div>
+              <div class="divider"></div>
+              <div class="hint"><span><i data-ico="info"></i></span><span>Aulas teóricas ocupando ambiente prático: <b>2 registros</b> nesta semana.</span></div>
+            </div>
+          </div>
+
+          <!-- Atividade -->
+          <div class="card">
+            <div class="card__head"><h3>Atividade recente</h3></div>
+            <div class="card__body">
+              <div class="tl">
+                <div class="tl__i is-now">
+                  <div class="tl__hh">09:12</div>
+                  <div class="tl__tt">SA-01 liberada automaticamente</div>
+                  <div class="tl__ds">Falta de Carla Mendes &middot; P4 e P5</div>
+                </div>
+                <div class="tl__i">
+                  <div class="tl__hh">08:47</div>
+                  <div class="tl__tt">Você remanejou Desenho Técnico</div>
+                  <div class="tl__ds">SA-03 &rarr; SA-01 &middot; docente notificado</div>
+                </div>
+                <div class="tl__i is-past">
+                  <div class="tl__hh">07:58</div>
+                  <div class="tl__tt">LAB-CNC bloqueado</div>
+                  <div class="tl__ds">Manutenção preventiva até 12:00</div>
+                </div>
+                <div class="tl__i is-past">
+                  <div class="tl__hh">ontem</div>
+                  <div class="tl__tt">3 solicitações aprovadas em lote</div>
+                  <div class="tl__ds">Metrologia &middot; MEC-1A</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/icones.js"></script>
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

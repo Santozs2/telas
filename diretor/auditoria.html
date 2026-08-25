@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Auditoria</title>
+<link rel="stylesheet" href="../assets/css/sipae.css">
+</head>
+<body data-role="diretor" data-page="auditoria" data-title="Auditoria" data-crumb="Governança">
+
+<div class="app">
+  <div id="sidebar-slot"></div>
+  <div class="main">
+    <div id="topbar-slot"></div>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h1>Trilha de auditoria</h1>
+          <p class="sub">Todo remanejamento, aprovação, recusa e bloqueio fica registrado com autor, data e justificativa. É o que garante a transparência exigida pelas entrevistas.</p>
+        </div>
+        <div class="page-head__actions">
+          <input class="input" type="date" value="2026-08-20" style="width:158px">
+          <button class="btn"><i data-ico="baixar"></i> Exportar trilha</button>
+        </div>
+      </div>
+
+      <div class="grid g-4" style="margin-bottom:18px">
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-info"><i data-ico="auditoria"></i></div><div class="kpi__lb">Eventos no mês</div></div>
+          <div class="kpi__vl">1.847</div>
+          <div class="kpi__ft">média de 84 por dia útil</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-warn"><i data-ico="troca"></i></div><div class="kpi__lb">Remanejamentos</div></div>
+          <div class="kpi__vl">43</div>
+          <div class="kpi__ft">todos com motivo preenchido</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-danger"><i data-ico="cadeado"></i></div><div class="kpi__lb">Quebras de regra autorizadas</div></div>
+          <div class="kpi__vl">6</div>
+          <div class="kpi__ft">4 pela direção, 2 pela coordenação</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-ok"><i data-ico="aprovado"></i></div><div class="kpi__lb">Registros íntegros</div></div>
+          <div class="kpi__vl">100<small>%</small></div>
+          <div class="kpi__ft">nenhum evento removido</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:18px">
+        <div class="card__body" style="padding:13px 16px">
+          <div class="row">
+            <div class="pill-filter" data-multiplo>
+              <span class="pill is-on">Todos</span>
+              <span class="pill">Agendamento</span>
+              <span class="pill">Remanejamento</span>
+              <span class="pill">Aprovação</span>
+              <span class="pill">Recusa</span>
+              <span class="pill">Bloqueio</span>
+              <span class="pill">Cadastro</span>
+            </div>
+            <div class="row" style="margin-left:auto;gap:8px">
+              <select class="select" style="width:auto">
+                <option>Todos os autores</option>
+                <option>Docentes</option>
+                <option>Coordenação</option>
+                <option>Direção</option>
+                <option>Sistema</option>
+              </select>
+              <label class="search" style="width:220px"><i data-ico="busca"></i><input placeholder="Ambiente, docente ou UC"></label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <h3>Eventos registrados</h3>
+          <span class="sub">Quinta-feira, 20/08/2026</span>
+          <div class="right"><span class="badge badge--ok badge--live"><span class="bullet"></span> Registro contínuo</span></div>
+        </div>
+        <div class="card__body--flush">
+          <div class="table-wrap">
+            <table class="tb">
+              <thead>
+                <tr><th>Horário</th><th>Evento</th><th>Objeto</th><th>Autor</th><th>Perfil</th><th>Antes &rarr; depois</th><th>Justificativa</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono">09:12</td>
+                  <td><span class="badge badge--info">Liberação automática</span></td>
+                  <td class="strong">SA-01 &middot; P4 e P5</td>
+                  <td>Sistema</td>
+                  <td><span class="tag">Automático</span></td>
+                  <td class="muted">Ocupada &rarr; disponível</td>
+                  <td class="muted">Falta registrada por Carla Mendes</td>
+                </tr>
+                <tr>
+                  <td class="mono">09:05</td>
+                  <td><span class="badge badge--danger">Falta</span></td>
+                  <td class="strong">Carla Mendes &middot; 20/08</td>
+                  <td>Carla Mendes</td>
+                  <td><span class="tag tag--cai">Docente</span></td>
+                  <td class="muted">Presente &rarr; ausente</td>
+                  <td class="muted">Atestado médico protocolado</td>
+                </tr>
+                <tr>
+                  <td class="mono">08:47</td>
+                  <td><span class="badge badge--warn">Remanejamento</span></td>
+                  <td class="strong">Desenho Técnico &middot; MEC-2A</td>
+                  <td>Saran Oliveira</td>
+                  <td><span class="tag tag--ct">Coordenação</span></td>
+                  <td class="muted">SA-03 &rarr; SA-01</td>
+                  <td class="muted">Palestra de integração ocupando o bloco A</td>
+                </tr>
+                <tr>
+                  <td class="mono">08:20</td>
+                  <td><span class="badge badge--ok">Aprovação</span></td>
+                  <td class="strong">Metrologia &middot; MEC-1A</td>
+                  <td>Saran Oliveira</td>
+                  <td><span class="tag tag--ct">Coordenação</span></td>
+                  <td class="muted">Pendente &rarr; confirmada</td>
+                  <td class="muted">Ambiente principal sem concorrência</td>
+                </tr>
+                <tr>
+                  <td class="mono">07:58</td>
+                  <td><span class="badge badge--muted">Bloqueio</span></td>
+                  <td class="strong">Lab. de Usinagem CNC</td>
+                  <td>Saran Oliveira</td>
+                  <td><span class="tag tag--ct">Coordenação</span></td>
+                  <td class="muted">Ativo &rarr; bloqueado até 12:00</td>
+                  <td class="muted">Manutenção preventiva programada</td>
+                </tr>
+                <tr>
+                  <td class="mono">07:05</td>
+                  <td><span class="badge badge--info">Cancelamento</span></td>
+                  <td class="strong">Oficina de Usinagem &middot; P4</td>
+                  <td>Marcos Prado</td>
+                  <td><span class="tag tag--cai">Docente</span></td>
+                  <td class="muted">Confirmada &rarr; cancelada</td>
+                  <td class="muted">Turma em visita técnica externa</td>
+                </tr>
+                <tr style="background:rgba(255,125,109,.07)">
+                  <td class="mono">ontem<div class="cell-sub">18:32</div></td>
+                  <td><span class="badge badge--danger">Exceção autorizada</span></td>
+                  <td class="strong">Oficina Elétrica Predial &middot; P5</td>
+                  <td>Didi Barbosa</td>
+                  <td><span class="tag tag--fic">Direção</span></td>
+                  <td class="muted">Regra de plano de curso ignorada</td>
+                  <td class="muted">Treinamento NR-10 sem aula regular no horário</td>
+                </tr>
+                <tr>
+                  <td class="mono">ontem<div class="cell-sub">16:35</div></td>
+                  <td><span class="badge badge--warn">Solicitação</span></td>
+                  <td class="strong">Lab. de Comando &middot; 25/08 P3</td>
+                  <td>Rafael Lima</td>
+                  <td><span class="tag tag--cai">Docente</span></td>
+                  <td class="muted">&mdash; &rarr; em análise</td>
+                  <td class="muted">Preferência por bancadas mais novas</td>
+                </tr>
+                <tr>
+                  <td class="mono">ontem<div class="cell-sub">14:02</div></td>
+                  <td><span class="badge badge--warn">Solicitação</span></td>
+                  <td class="strong">Lab. de Comando &middot; 25/08 P3</td>
+                  <td>Edvaldo Ramos</td>
+                  <td><span class="tag tag--cai">Docente</span></td>
+                  <td class="muted">&mdash; &rarr; em análise</td>
+                  <td class="muted">Ambiente principal da UC</td>
+                </tr>
+                <tr>
+                  <td class="mono">19/08<div class="cell-sub">11:20</div></td>
+                  <td><span class="badge badge--muted">Cadastro</span></td>
+                  <td class="strong">UC Projetos Integradores</td>
+                  <td>Saran Oliveira</td>
+                  <td><span class="tag tag--ct">Coordenação</span></td>
+                  <td class="muted">Ambiente secundário adicionado</td>
+                  <td class="muted">Sala de aula liberada para etapa teórica</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card__foot">
+          <span class="muted">Exibindo 10 de 1.847 eventos do mês</span>
+          <div class="pagination">
+            <button>&lsaquo;</button><button class="is-on">1</button><button>2</button>
+            <button>3</button><button>&hellip;</button><button>185</button><button>&rsaquo;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid g-2" style="margin-top:16px">
+        <div class="card">
+          <div class="card__head"><h3>Quem mais altera a agenda</h3><span class="sub">Agosto/2026</span></div>
+          <div class="card__body">
+            <div class="bars">
+              <div class="bar-row"><div class="top"><span class="l">Sistema (liberação automática)</span><span class="r">612 eventos</span></div><div class="meter"><span class="f-brand" style="width:100%"></span></div></div>
+              <div class="bar-row"><div class="top"><span class="l">Docentes</span><span class="r">498 eventos</span></div><div class="meter"><span class="f-brand" style="width:81%"></span></div></div>
+              <div class="bar-row"><div class="top"><span class="l">Coordenação industrial</span><span class="r">341 eventos</span></div><div class="meter"><span class="f-warn" style="width:56%"></span></div></div>
+              <div class="bar-row"><div class="top"><span class="l">Coordenação eletroeletrônica</span><span class="r">180 eventos</span></div><div class="meter"><span class="f-warn" style="width:29%"></span></div></div>
+              <div class="bar-row"><div class="top"><span class="l">Direção</span><span class="r">16 eventos</span></div><div class="meter"><span class="f-ok" style="width:3%"></span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__head"><h3>Pontos de atenção da trilha</h3></div>
+          <div class="list">
+            <div class="list__item">
+              <div class="list__ico i-warn"><i data-ico="troca"></i></div>
+              <div class="list__bd">
+                <div class="list__tt">12 remanejamentos no mesmo ambiente</div>
+                <div class="list__ds">Lab. de Comando Elétrico. Indica planejamento inicial inadequado ou disputa recorrente.</div>
+              </div>
+              <div class="list__rt"><a class="btn btn--sm" href="ocupacao.html">Investigar</a></div>
+            </div>
+            <div class="list__item">
+              <div class="list__ico i-danger"><i data-ico="cadeado"></i></div>
+              <div class="list__bd">
+                <div class="list__tt">2 exceções concedidas pela coordenação</div>
+                <div class="list__ds">Regra de plano de curso ignorada sem passar pela direção. Política prevê escalonamento.</div>
+              </div>
+              <div class="list__rt"><a class="btn btn--sm" href="aprovacoes.html">Revisar</a></div>
+            </div>
+            <div class="list__item">
+              <div class="list__ico i-ok"><i data-ico="check"></i></div>
+              <div class="list__bd">
+                <div class="list__tt">Justificativas preenchidas em 100% dos casos</div>
+                <div class="list__ds">Nenhum remanejamento sem motivo registrado desde a implantação.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/icones.js"></script>
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

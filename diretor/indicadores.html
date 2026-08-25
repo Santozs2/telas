@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Indicadores</title>
+<link rel="stylesheet" href="../assets/css/sipae.css">
+</head>
+<body data-role="diretor" data-page="indicadores" data-title="Indicadores Institucionais" data-crumb="Visão institucional">
+
+<div class="app">
+  <div id="sidebar-slot"></div>
+  <div class="main">
+    <div id="topbar-slot"></div>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h1>Indicadores institucionais</h1>
+          <p class="sub">Metas de gestão de espaço físico acompanhadas mês a mês.</p>
+        </div>
+        <div class="page-head__actions">
+          <select class="select" style="width:auto"><option>Semestre 2026/2</option><option>Semestre 2026/1</option></select>
+          <button class="btn"><i data-ico="baixar"></i> Exportar</button>
+          <button class="btn btn--primary"><i data-ico="imprimir"></i> Fechar relatório</button>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <div class="tab is-on">Metas</div>
+        <div class="tab">Comparativo por eixo</div>
+        <div class="tab">Série histórica</div>
+      </div>
+
+      <div class="grid g-2" style="margin-bottom:18px">
+
+        <div class="card">
+          <div class="card__head"><h3>Taxa de utilização da infraestrutura</h3><div class="right"><span class="badge badge--warn">Abaixo da meta</span></div></div>
+          <div class="card__body">
+            <div class="row row--between" style="align-items:flex-end">
+              <div>
+                <div class="kpi__vl" style="margin:0">64<small>%</small></div>
+                <div class="muted" style="font-size:12.2px">meta institucional: 75%</div>
+              </div>
+              <div class="trend trend--up" style="font-size:13px">+6 p.p. no mês</div>
+            </div>
+            <div class="meter meter--lg" style="margin-top:12px"><span class="f-brand" style="width:64%"></span></div>
+            <div class="divider"></div>
+            <div class="chart-cols" style="height:120px">
+              <div class="c"><div class="bar alt" style="height:49%"></div><div class="lb">Mar</div></div>
+              <div class="c"><div class="bar alt" style="height:52%"></div><div class="lb">Abr</div></div>
+              <div class="c"><div class="bar alt" style="height:55%"></div><div class="lb">Mai</div></div>
+              <div class="c"><div class="bar alt" style="height:54%"></div><div class="lb">Jun</div></div>
+              <div class="c"><div class="bar" style="height:58%"></div><div class="lb">Jul</div></div>
+              <div class="c"><div class="bar" style="height:64%"></div><div class="lb">Ago</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__head"><h3>Aulas em ambiente incompatível</h3><div class="right"><span class="badge badge--ok">Em queda</span></div></div>
+          <div class="card__body">
+            <div class="row row--between" style="align-items:flex-end">
+              <div>
+                <div class="kpi__vl" style="margin:0">16</div>
+                <div class="muted" style="font-size:12.2px">meta institucional: 0</div>
+              </div>
+              <div class="trend trend--down" style="font-size:13px">&minus;61% no mês</div>
+            </div>
+            <div class="meter meter--lg" style="margin-top:12px"><span class="f-warn" style="width:16%"></span></div>
+            <div class="divider"></div>
+            <div class="chart-cols" style="height:120px">
+              <div class="c"><div class="bar alt" style="height:96%"></div><div class="lb">Mar</div></div>
+              <div class="c"><div class="bar alt" style="height:88%"></div><div class="lb">Abr</div></div>
+              <div class="c"><div class="bar alt" style="height:74%"></div><div class="lb">Mai</div></div>
+              <div class="c"><div class="bar alt" style="height:62%"></div><div class="lb">Jun</div></div>
+              <div class="c"><div class="bar" style="height:41%"></div><div class="lb">Jul</div></div>
+              <div class="c"><div class="bar" style="height:16%"></div><div class="lb">Ago</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card" style="margin-bottom:18px">
+        <div class="card__head"><h3>Painel de metas</h3><span class="sub">Agosto/2026</span></div>
+        <div class="card__body--flush">
+          <div class="table-wrap">
+            <table class="tb">
+              <thead>
+                <tr><th>Indicador</th><th>Como é medido</th><th class="num">Meta</th><th class="num">Atual</th><th>Progresso</th><th>Situação</th><th>Tendência</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="strong">Taxa de utilização</td>
+                  <td class="muted">Períodos ocupados / períodos disponíveis</td>
+                  <td class="num">75%</td><td class="num">64%</td>
+                  <td style="min-width:120px"><div class="meter"><span class="f-warn" style="width:85%"></span></div></td>
+                  <td><span class="badge badge--warn">Abaixo</span></td>
+                  <td><span class="trend trend--up">&#9650; melhora</span></td>
+                </tr>
+                <tr>
+                  <td class="strong">Cumprimento de carga horária</td>
+                  <td class="muted">Horas ministradas / horas previstas nas UCs</td>
+                  <td class="num">95%</td><td class="num">92%</td>
+                  <td><div class="meter"><span class="f-brand" style="width:97%"></span></div></td>
+                  <td><span class="badge badge--warn">Quase</span></td>
+                  <td><span class="trend trend--flat">&#9644; estável</span></td>
+                </tr>
+                <tr>
+                  <td class="strong">Conflitos por 100 agendamentos</td>
+                  <td class="muted">Disputas registradas / agendamentos</td>
+                  <td class="num">1,0</td><td class="num">1,3</td>
+                  <td><div class="meter"><span class="f-warn" style="width:77%"></span></div></td>
+                  <td><span class="badge badge--warn">Acima</span></td>
+                  <td><span class="trend trend--down">&#9660; caindo</span></td>
+                </tr>
+                <tr>
+                  <td class="strong">Aulas em ambiente incompatível</td>
+                  <td class="muted">Aula teórica ocupando laboratório/oficina</td>
+                  <td class="num">0</td><td class="num">16</td>
+                  <td><div class="meter"><span class="f-danger" style="width:35%"></span></div></td>
+                  <td><span class="badge badge--danger">Fora</span></td>
+                  <td><span class="trend trend--down">&#9660; caindo</span></td>
+                </tr>
+                <tr>
+                  <td class="strong">Tempo de resposta a solicitação</td>
+                  <td class="muted">Média entre envio e decisão da coordenação</td>
+                  <td class="num">8h</td><td class="num">4h</td>
+                  <td><div class="meter"><span class="f-ok" style="width:100%"></span></div></td>
+                  <td><span class="badge badge--ok">Atingida</span></td>
+                  <td><span class="trend trend--up">&#9650; melhora</span></td>
+                </tr>
+                <tr>
+                  <td class="strong">Reaproveitamento de sala liberada</td>
+                  <td class="muted">Ambientes livres por falta que voltam a ser usados</td>
+                  <td class="num">60%</td><td class="num">68%</td>
+                  <td><div class="meter"><span class="f-ok" style="width:100%"></span></div></td>
+                  <td><span class="badge badge--ok">Atingida</span></td>
+                  <td><span class="trend trend--up">&#9650; melhora</span></td>
+                </tr>
+                <tr>
+                  <td class="strong">Alunos por docente em prática</td>
+                  <td class="muted">Média em laboratório e oficina</td>
+                  <td class="num">&le; 16</td><td class="num">14,2</td>
+                  <td><div class="meter"><span class="f-ok" style="width:100%"></span></div></td>
+                  <td><span class="badge badge--ok">Atingida</span></td>
+                  <td><span class="trend trend--flat">&#9644; estável</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card__foot"><span class="muted">4 de 7 metas atingidas &middot; nenhuma em piora.</span></div>
+      </div>
+
+      <div class="grid g-2">
+        <div class="card">
+          <div class="card__head"><h3>Impacto do sistema</h3><span class="sub">Antes e depois da adoção do SIPAE</span></div>
+          <div class="card__body--flush">
+            <table class="tb">
+              <thead><tr><th>Indicador</th><th class="num">Antes (média jan-jun)</th><th class="num">Agora (ago)</th><th class="num">Variação</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">Utilização da infraestrutura</td><td class="num">52%</td><td class="num">64%</td><td class="num"><span class="trend trend--up">+12 p.p.</span></td></tr>
+                <tr><td class="strong">Conflitos por mês</td><td class="num">31</td><td class="num">17</td><td class="num"><span class="trend trend--down">&minus;45%</span></td></tr>
+                <tr><td class="strong">Aulas teóricas em ambiente prático</td><td class="num">78</td><td class="num">16</td><td class="num"><span class="trend trend--down">&minus;79%</span></td></tr>
+                <tr><td class="strong">Tempo para reservar uma sala</td><td class="num">2 dias</td><td class="num">4 horas</td><td class="num"><span class="trend trend--down">&minus;92%</span></td></tr>
+                <tr><td class="strong">Salas ociosas em horário de pico</td><td class="num">6</td><td class="num">2</td><td class="num"><span class="trend trend--down">&minus;67%</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__head"><h3>Recomendações para a direção</h3></div>
+          <div class="card__body">
+            <div class="stack" style="gap:14px">
+              <div class="row" style="gap:11px;align-items:flex-start">
+                <div class="list__ico i-danger">1</div>
+                <div>
+                  <div class="strong">Ampliar o Lab. de Comando Elétrico</div>
+                  <div class="muted" style="font-size:12.4px">Único ambiente com demanda projetada acima de 100% para 2027/1. Alternativa de curto prazo: terceiro turno.</div>
+                </div>
+              </div>
+              <div class="row" style="gap:11px;align-items:flex-start">
+                <div class="list__ico i-warn">2</div>
+                <div>
+                  <div class="strong">Revisar o vínculo de UCs do Lab. de Informática</div>
+                  <div class="muted" style="font-size:12.4px">Concentra 14 das 16 aulas incompatíveis. Parte das UCs pode migrar para sala de aula comum.</div>
+                </div>
+              </div>
+              <div class="row" style="gap:11px;align-items:flex-start">
+                <div class="list__ico i-info">3</div>
+                <div>
+                  <div class="strong">Aproveitar o auditório e a SA-04</div>
+                  <div class="muted" style="font-size:12.4px">Somam 1.008 períodos livres por mês, suficientes para absorver a expansão FIC sem obra.</div>
+                </div>
+              </div>
+              <div class="row" style="gap:11px;align-items:flex-start">
+                <div class="list__ico i-ok">4</div>
+                <div>
+                  <div class="strong">Manter a política de prioridade por plano de curso</div>
+                  <div class="muted" style="font-size:12.4px">Responsável pela queda de 45% nos conflitos desde a implantação.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/icones.js"></script>
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>

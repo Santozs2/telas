@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPAE &middot; Meu Plano de Curso</title>
+<link rel="stylesheet" href="../assets/css/sipae.css">
+</head>
+<body data-role="docente" data-page="plano" data-title="Meu Plano de Curso" data-crumb="Planejamento">
+
+<div class="app">
+  <div id="sidebar-slot"></div>
+  <div class="main">
+    <div id="topbar-slot"></div>
+
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <h1>Meu plano de curso</h1>
+          <p class="sub">É o plano de curso que autoriza cada ambiente. Este cadastro é mantido pela coordenação &mdash; aqui você consulta e solicita ajuste.</p>
+        </div>
+        <div class="page-head__actions">
+          <button class="btn"><i data-ico="baixar"></i> Baixar PDF</button>
+          <button class="btn btn--primary">Solicitar ajuste à coordenação</button>
+        </div>
+      </div>
+
+      <div class="alert alert--info" style="margin-bottom:16px">
+        <span class="alert__ic"><i data-ico="cadeado"></i></span>
+        <div>
+          <div class="alert__tt">Somente leitura</div>
+          <div>A vinculação entre unidade curricular e ambiente define o que aparece disponível para você no mapa de salas. Divergências devem ser tratadas com a coordenação.</div>
+        </div>
+      </div>
+
+      <div class="grid g-3" style="margin-bottom:18px">
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-info"><i data-ico="curso"></i></div><div class="kpi__lb">Unidades curriculares</div></div>
+          <div class="kpi__vl">5</div>
+          <div class="kpi__ft">em 2 cursos &middot; 3 turmas</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-purple"><i data-ico="ampulheta"></i></div><div class="kpi__lb">Carga horária total</div></div>
+          <div class="kpi__vl">195<small> h</small></div>
+          <div class="kpi__ft">158h já distribuídas na agenda</div>
+        </div>
+        <div class="card kpi">
+          <div class="kpi__top"><div class="kpi__ico i-ok"><i data-ico="predio"></i></div><div class="kpi__lb">Ambientes autorizados</div></div>
+          <div class="kpi__vl">7</div>
+          <div class="kpi__ft">4 salas, 3 laboratórios</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <h3>Unidades curriculares e ambientes vinculados</h3>
+          <span class="sub">Semestre 2026/2</span>
+          <div class="right">
+            <select class="select" style="width:auto;font-size:12.4px;padding:5px 9px">
+              <option>Todos os cursos</option>
+              <option>CAI &middot; Mecânica</option>
+              <option>CT &middot; Automação Industrial</option>
+            </select>
+          </div>
+        </div>
+        <div class="card__body--flush">
+          <div class="table-wrap">
+            <table class="tb">
+              <thead>
+                <tr>
+                  <th>Unidade curricular</th><th>Curso / turma</th><th class="num">CH</th>
+                  <th>Natureza</th><th>Ambientes autorizados</th><th>Divisão de turma</th><th>Papel</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="strong">Comandos Elétricos</td>
+                  <td><span class="tag tag--cai">CAI</span> Mecânica &middot; MEC-2A</td>
+                  <td class="num">60h</td>
+                  <td><span class="badge badge--purple">Prática</span></td>
+                  <td>
+                    <div class="row" style="gap:6px">
+                      <span class="prio prio--1"><span class="n">1</span> Lab. de Comando Elétrico</span>
+                    </div>
+                    <div class="row" style="gap:6px;margin-top:4px">
+                      <span class="prio prio--3"><span class="n">3</span> Oficina Elétrica Predial</span>
+                    </div>
+                  </td>
+                  <td>2 grupos de 14 <div class="muted" style="font-size:11.4px">limite 16/docente</div></td>
+                  <td><span class="badge badge--info">Principal</span></td>
+                </tr>
+                <tr>
+                  <td class="strong">Projetos Integradores</td>
+                  <td><span class="tag tag--cai">CAI</span> Mecânica &middot; MEC-2A</td>
+                  <td class="num">45h</td>
+                  <td><span class="badge badge--muted">Mista</span></td>
+                  <td>
+                    <div class="row" style="gap:6px"><span class="prio prio--1"><span class="n">1</span> Lab. de Informática</span></div>
+                    <div class="row" style="gap:6px;margin-top:4px"><span class="prio prio--2"><span class="n">2</span> Sala de aula (qualquer)</span></div>
+                  </td>
+                  <td>Turma inteira &middot; 28</td>
+                  <td><span class="badge badge--info">Principal</span></td>
+                </tr>
+                <tr>
+                  <td class="strong">Desenho Técnico</td>
+                  <td><span class="tag tag--cai">CAI</span> Mecânica &middot; MEC-2A</td>
+                  <td class="num">40h</td>
+                  <td><span class="badge badge--muted">Teórica</span></td>
+                  <td><div class="row" style="gap:6px"><span class="prio prio--2"><span class="n">2</span> Sala de aula (qualquer)</span></div></td>
+                  <td>Turma inteira &middot; 28</td>
+                  <td><span class="badge badge--info">Principal</span></td>
+                </tr>
+                <tr>
+                  <td class="strong">Metrologia</td>
+                  <td><span class="tag tag--cai">CAI</span> Mecânica &middot; MEC-1A</td>
+                  <td class="num">30h</td>
+                  <td><span class="badge badge--purple">Prática</span></td>
+                  <td><div class="row" style="gap:6px"><span class="prio prio--1"><span class="n">1</span> Lab. de Metrologia</span></div></td>
+                  <td>2 grupos de 12</td>
+                  <td><span class="badge badge--muted">Auxiliar</span></td>
+                </tr>
+                <tr>
+                  <td class="strong">Segurança do Trabalho</td>
+                  <td><span class="tag tag--ct">CT</span> Automação &middot; AUT-1A</td>
+                  <td class="num">20h</td>
+                  <td><span class="badge badge--muted">Teórica</span></td>
+                  <td><div class="row" style="gap:6px"><span class="prio prio--2"><span class="n">2</span> Sala de aula (qualquer)</span></div></td>
+                  <td>Turma inteira &middot; 32</td>
+                  <td><span class="badge badge--info">Principal</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card__foot">
+          <span><i data-ico="info"></i></span>
+          <span>Prioridade <b>1</b> = ambiente principal da UC (maior peso no desempate) &middot; <b>2</b> secundário &middot; <b>3</b> terciário.</span>
+        </div>
+      </div>
+
+      <div class="grid g-2" style="margin-top:16px">
+
+        <div class="card">
+          <div class="card__head"><h3>Distribuição prevista da carga</h3><span class="sub">Semestre 2026/2</span></div>
+          <div class="card__body">
+            <div class="chart-cols">
+              <div class="c"><div class="vl">40h</div><div class="bar" style="height:66%"></div><div class="lb">Ago</div></div>
+              <div class="c"><div class="vl">45h</div><div class="bar" style="height:75%"></div><div class="lb">Set</div></div>
+              <div class="c"><div class="vl">42h</div><div class="bar" style="height:70%"></div><div class="lb">Out</div></div>
+              <div class="c"><div class="vl">38h</div><div class="bar alt" style="height:63%"></div><div class="lb">Nov</div></div>
+              <div class="c"><div class="vl">30h</div><div class="bar alt" style="height:50%"></div><div class="lb">Dez</div></div>
+            </div>
+          </div>
+          <div class="card__foot"><span class="muted">Barras claras = meses ainda sem agendamento lançado.</span></div>
+        </div>
+
+        <div class="card">
+          <div class="card__head"><h3>Turmas e docentes vinculados</h3></div>
+          <div class="list">
+            <div class="list__item">
+              <div class="list__ico i-info">MEC</div>
+              <div class="list__bd">
+                <div class="list__tt">MEC-2A &middot; 28 alunos</div>
+                <div class="list__ds">CAI Mecânica &middot; manhã &middot; aula de 50 min</div>
+                <div class="list__mt">Você (principal) &middot; Bruno Alves (auxiliar)</div>
+              </div>
+              <div class="list__rt"><span class="badge badge--ok">Ativa</span></div>
+            </div>
+            <div class="list__item">
+              <div class="list__ico i-info">MEC</div>
+              <div class="list__bd">
+                <div class="list__tt">MEC-1A &middot; 24 alunos</div>
+                <div class="list__ds">CAI Mecânica &middot; manhã &middot; aula de 50 min</div>
+                <div class="list__mt">Paulo Nunes (principal) &middot; você (auxiliar)</div>
+              </div>
+              <div class="list__rt"><span class="badge badge--ok">Ativa</span></div>
+            </div>
+            <div class="list__item">
+              <div class="list__ico i-purple">AUT</div>
+              <div class="list__bd">
+                <div class="list__tt">AUT-1A &middot; 32 alunos</div>
+                <div class="list__ds">CT Automação Industrial &middot; tarde &middot; aula de 45 min</div>
+                <div class="list__mt">Você (principal)</div>
+              </div>
+              <div class="list__rt"><span class="badge badge--muted">Carga concluída</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/icones.js"></script>
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/shell.js"></script>
+</body>
+</html>
